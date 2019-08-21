@@ -1,6 +1,6 @@
 <?php
 // Chargement des classes
-require_once('model/ChapitreManager.php');
+require_once(MODEL.'ChapitreManager.php');
 // require_once('model/CommentManager.php');
   
 function listPosts()
@@ -8,7 +8,7 @@ function listPosts()
     $chapitreManager = new P4OC\site\Model\ChapitreManager();
     $chapitre = $chapitreManager->getChapitres();
   
-    require('view/frontend/chapitresView.php');
+    require(VIEWFRONT.'chapitresView.php');
 }
   
 function post()

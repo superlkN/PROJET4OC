@@ -16,5 +16,6 @@ define('CONTROLLERBACK', ROOT.'controller/backend/');
 define('VIEWFRONT', ROOT.'view/frontend/');
 define('VIEWBACK', ROOT.'view/backend/');
 define('MODEL', ROOT.'model/');
+define('CLASSES', ROOT.'classes/');
 
 define('ASSETS', HOST.'assets/css/');
