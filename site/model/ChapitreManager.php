@@ -14,7 +14,7 @@ class ChapitreManager extends Manager
         return $req;
     }
 
-    public function getChapitre()
+    public function getChapitre($postId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapitres WHERE id = ?');

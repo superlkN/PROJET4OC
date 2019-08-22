@@ -1,10 +1,15 @@
 <?php
 
+include_once(CONTROLLERFRONT.'Home.php');
+
 class Routeur 
 {
     private $request;
 
-    private $routes = [ "home.html" => "frontend"];
+    private $routes = [ "home"    => ["controller" => "Home", "method" => "showHome"],
+                        "contenu" => ["controller" => "Home", "method" => "showPost"],
+                        "comment" => ["controller" => "Home", "method" => "addComment"]
+                        ];
 
     public function __construct($request)
     {
@@ -17,38 +22,11 @@ class Routeur
 
         if(key_exists($request, $this->routes))
         {
-            $controller = $this->routes[$request];
-            require_once(CONTROLLERFRONT.$controller.'.php');
+            $controller = $this->routes[$request]['controller'];
+            $method = $this->routes[$request]['method'];
 
-            try 
-            {
-                if (isset($_GET['action']))
-                {
-                    if ($_GET['action'] == 'listPosts') 
-                    {
-                        listPosts();
-                    }
-                    elseif ($_GET['action'] == 'post') 
-                    {
-                        if (isset($_GET['id']) && $_GET['id'] > 0) 
-                        {
-                            post();
-                        }
-                        else 
-                        {
-                            throw new Exception('Aucun identifiant de billet envoyé');
-                        }
-                    }
-                }
-                else 
-                {
-                    listPosts();
-                }
-            } 
-            catch(Exception $e) 
-            {
-                echo 'Erreur : ' . $e->getMessage();
-            }
+            $currentController = new $controller();
+            $currentController->$method();
         } 
         else 
         {
