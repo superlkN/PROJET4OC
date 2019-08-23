@@ -27,8 +27,9 @@ class ChapitreManager extends Manager
     public function getAuteur()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, nom_auteur, content, nom_de_limage, FROM auteur');
-
+        $req = $db->prepare('SELECT id, nom_auteur, content, nom_de_limage FROM auteur');
+        $req->execute();
+        
         return $req;
     }
 

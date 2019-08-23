@@ -3,38 +3,49 @@
 <?php ob_start(); ?>
 <h1>Voyage en Alaska !</h1>
 
-<div class="auteur">
-    <h2> A propos de l'auteur : </h2>
-    <h3>
-        <?= $auteur['nom_auteur'] ?>
-    </h3>
-    <?php echo '<img width="400" height="200"src="assets/img/'.$auteur['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
-    <p>
-        <?= $auteur['content'] ?>
-    </p>
-</div>
+<?php
+while ($data = $auteur->fetch())
+{
+?>
+
+    <div class="auteur">
+        <h2> A propos de l'auteur : </h2>
+        <h3>
+            <?= $data['nom_auteur'] ?>
+        </h3>
+
+        <?php echo '<img width="400" height="200"src="assets/img/'.$data['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
+        
+        <p>
+            <?= $data['content'] ?>
+        </p>
+    </div>
+
+<?php
+}
+?>
 
 <h2> Mes dernière publications :</h2>
 
 <?php
-while ($data = $chapitre->fetch())
+while ($data2 = $chapitre->fetch())
 {
 ?>
     <div class="news">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
+            <em>le <?= $data2['creation_date_fr'] ?></em>
         </h3>
     
-       <?php echo '<img width="350" height="200"src="assets/img/'.$data['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
+       <?php echo '<img width="350" height="200"src="assets/img/'.$data2['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
 
         <p>
             <?php 
-                $length = nl2br(substr($data['content'], 0, 438)); 
+                $length = nl2br(substr($data2['content'], 0, 438)); 
                 echo $length . ".......";
             ?>
             <br />
-            <em><a href="contenu?action=showPost&amp;id=<?= $data['id'] ?>">Suite</a></em>
+            <em><a href="contenu?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
         </p>
     </div>
 <?php
