@@ -17,7 +17,7 @@ while ($data = $chapitre->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="contenu?action=showPost&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <em><a href="contenu?action=showPost&amp;id=<?= $data['id'] ?>">Suite</a></em>
         </p>
     </div>
 <?php
