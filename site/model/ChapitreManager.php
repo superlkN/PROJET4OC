@@ -24,6 +24,14 @@ class ChapitreManager extends Manager
         return $post;
     }
 
+    public function getAuteur()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id, nom_auteur, content, nom_de_limage, FROM auteur');
+
+        return $req;
+    }
+
     public function addChapitre()
     {
 

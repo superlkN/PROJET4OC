@@ -2,7 +2,19 @@
 
 <?php ob_start(); ?>
 <h1>Voyage en Alaska !</h1>
-<p> Mes dernière publications :</p>
+
+<div class="auteur">
+    <h2> A propos de l'auteur : </h2>
+    <h3>
+        <?= $auteur['nom_auteur'] ?>
+    </h3>
+    <?php echo '<img width="400" height="200"src="assets/img/'.$auteur['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
+    <p>
+        <?= $auteur['content'] ?>
+    </p>
+</div>
+
+<h2> Mes dernière publications :</h2>
 
 <?php
 while ($data = $chapitre->fetch())

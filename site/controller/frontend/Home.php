@@ -10,6 +10,7 @@ class Home
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitre = $chapitreManager->getChapitres();
+        $auteur = $chapitreManager->getAuteur();
   
         require(VIEWFRONT.'chapitresView.php');
     }
