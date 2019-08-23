@@ -15,7 +15,10 @@ while ($data = $chapitre->fetch())
         </h3>
         
         <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
+            <?php 
+                $length = nl2br(substr($data['content'], 0, 438)); 
+                echo $length . ".......";
+            ?>
             <br />
             <em><a href="contenu?action=showPost&amp;id=<?= $data['id'] ?>">Suite</a></em>
         </p>
