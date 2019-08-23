@@ -33,7 +33,7 @@ while ($data2 = $chapitre->fetch())
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data['title']) ?>
+            <?= htmlspecialchars($data2['title']) ?>
             <em>le <?= $data2['creation_date_fr'] ?></em>
         </h3>
     
