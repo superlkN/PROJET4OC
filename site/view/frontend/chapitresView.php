@@ -13,7 +13,9 @@ while ($data = $chapitre->fetch())
             <?= htmlspecialchars($data['title']) ?>
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
-        
+    
+       <?php echo '<img width="350" height="200"src="assets/img/'.$data['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
+
         <p>
             <?php 
                 $length = nl2br(substr($data['content'], 0, 438)); 
