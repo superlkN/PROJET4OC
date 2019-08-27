@@ -19,3 +19,14 @@ h1 {
 .auteur {
     border: solid;
 }
+
+#login-controls {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 50px;
+    width : 300px;
+}
+
+.error-text {
+    color: #f00;
+}

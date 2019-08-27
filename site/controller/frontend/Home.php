@@ -35,7 +35,7 @@ class Home
             throw new Exception('Impossible d\'ajouter le commentaire !');
         }
         else {
-            header('Location:contenu?action=showPost&id=' . $postId);
+            header('Location:chapitre?action=showPost&id=' . $postId);
         }
     } 
 }

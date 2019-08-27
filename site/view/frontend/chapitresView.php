@@ -45,7 +45,7 @@ while ($data2 = $chapitre->fetch())
                 echo $length . ".......";
             ?>
             <br />
-            <em><a href="contenu?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
+            <em><a href="chapitre?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
         </p>
     </div>
 <?php

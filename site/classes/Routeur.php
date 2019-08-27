@@ -1,14 +1,16 @@
 <?php
 
 include_once(CONTROLLERFRONT.'Home.php');
+include_once(CONTROLLERBACK.'UserController.php');
 
 class Routeur 
 {
     private $request;
 
     private $routes = [ "home"    => ["controller" => "Home", "method" => "showHome"],
-                        "contenu" => ["controller" => "Home", "method" => "showPost"],
-                        "comment" => ["controller" => "Home", "method" => "addComment"]
+                        "chapitre" => ["controller" => "Home", "method" => "showPost"],
+                        "comment" => ["controller" => "Home", "method" => "addComment"],
+                        "login" => ["controller" => "UserController", "method" => "login"]
                         ];
 
     public function __construct($request)
