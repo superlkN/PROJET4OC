@@ -1,8 +1,10 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
+<div id="headerChap">
 <h1>Voyage en Alaska !</h1>
-
+<a href="login?action=showLogin"> Login </a>
+</div>
 <?php
 while ($data = $auteur->fetch())
 {

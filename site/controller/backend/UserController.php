@@ -1,10 +1,17 @@
 <?php
 
+require_once(MODEL.'AuthManager.php');
+
 class UserController 
 {
-    public function login()
+    public function showLogin()
     {
-       // https://www.youtube.com/watch?v=arqv2YVp_3E
+        require(VIEWBACK.'login.php');
+    }
+
+    public function showDash()
+    {
+        require(VIEWBACK.'dashboardView.php');
     }
 
     public function logout() 

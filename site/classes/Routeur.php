@@ -10,7 +10,8 @@ class Routeur
     private $routes = [ "home"    => ["controller" => "Home", "method" => "showHome"],
                         "chapitre" => ["controller" => "Home", "method" => "showPost"],
                         "comment" => ["controller" => "Home", "method" => "addComment"],
-                        "login" => ["controller" => "UserController", "method" => "login"]
+                        "login" => ["controller" => "UserController", "method" => "showLogin"],
+                        "dashboard" => ["controller" => "UserController", "method" => "showDash"]
                         ];
 
     public function __construct($request)

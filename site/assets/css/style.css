@@ -20,13 +20,24 @@ h1 {
     border: solid;
 }
 
-#login-controls {
-    margin: 0 auto;
-    border: 1px solid #ccc;
+.frm{
+    border: solid gray 1px;
+    width: 20%;
+    border-radius: 5px;
+    margin: 100px auto;
+    background: white;
     padding: 50px;
-    width : 300px;
+    color: black;
 }
 
-.error-text {
-    color: #f00;
+#btn {
+    color: #fff;
+    background: #337ab7;
+    padding: 5px;
+    margin-left: 69%;
+}
+
+#headerChap {
+    display: flex;
+    
 }
