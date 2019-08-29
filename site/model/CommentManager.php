@@ -20,14 +20,6 @@ class CommentManager extends Manager
         $affectedLines = $comments->execute(array($postId, $author, $comment));
         return $affectedLines;
     }
-     //suppression de postid
-    public function editComment($id, $comment)
-    {
-        $db = $this->dbConnect();
-        $comments = $db -> prepare('UPDATE comments SET comment = ?, comment_date = NOW() WHERE id = ?');
-        $affectedComment = $comments->execute(array($comment, $id));
-        return $affectedComment;
-    }
      
    public function getComment($id)
     {

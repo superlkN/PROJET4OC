@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <div id="headerChap">
 <h1>Voyage en Alaska !</h1>
-<a href="login?action=showLogin"> Login </a>
+<a href="index.php?action=showLogin"> Login </a>
 </div>
 <?php
 while ($data = $auteur->fetch())
@@ -47,7 +47,7 @@ while ($data2 = $chapitre->fetch())
                 echo $length . ".......";
             ?>
             <br />
-            <em><a href="chapitre?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
+            <em><a href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
         </p>
     </div>
 <?php
@@ -56,4 +56,4 @@ $chapitre->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require(VIEWFRONT.'template.php'); ?>
+<?php require('view/frontend/template.php'); ?>

@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <title> Login Page </title>
-        <link href="<?php echo ASSETS;?>style.css" rel="stylesheet" /> 
+        <link href="assets/css/style.css" rel="stylesheet" /> 
     </head>        
     <body>
         <div class="frm">
-            <form action="dashboard?action=showDash" method="POST">
+            <form action="index.php?action=showDash" method="POST">
                 <p>
                     <label>Username:</label>
                     <input type="text" id="user" name="user"  />
@@ -23,3 +23,4 @@
         </div>
     </body>
 </html>
+> 

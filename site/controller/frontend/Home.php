@@ -1,20 +1,19 @@
 <?php
 // Chargement des classes
-require_once(MODEL.'ChapitreManager.php');
-require_once(MODEL.'CommentManager.php');
+require_once('model/ChapitreManager.php');
+require_once('model/CommentManager.php');
 
 
-class Home 
-{
-    public function showHome()
+
+    function showHome()
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitre = $chapitreManager->getChapitres();
         $auteur = $chapitreManager->getAuteur();
   
-        require(VIEWFRONT.'chapitresView.php');
+        require('view/frontend/chapitresView.php');
     }
-    public function showPost()
+    function showPost()
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $commentManager = new P4OC\site\Model\CommentManager();
@@ -22,10 +21,10 @@ class Home
         $chapitre = $chapitreManager->getChapitre($_GET['id']);
         $comments = $commentManager->getComments($_GET['id']); 
     
-        require(VIEWFRONT.'chapView.php');
+        require('view/frontend/chapView.php');
     }
 
-    public function addComment($postId, $author, $comment)
+    function addComment($postId, $author, $comment)
     {
         $commentManager = new P4OC\site\Model\CommentManager();
     
@@ -35,10 +34,10 @@ class Home
             throw new Exception('Impossible d\'ajouter le commentaire !');
         }
         else {
-            header('Location:chapitre?action=showPost&id=' . $postId);
+            header('Location:index.php?action=showPost&id=' . $postId);
         }
     } 
-}
+
      
 
   

@@ -1,26 +1,24 @@
 <?php
 
-require_once(MODEL.'AuthManager.php');
+require_once('model/AuthManager.php');
 
-class UserController 
-{
-    public function showLogin()
+
+    function showLogin()
     {
-        require(VIEWBACK.'login.php');
+        require('view/backend/login.php');
     }
 
-    public function showDash()
+    function showDash()
     {
-        require(VIEWBACK.'dashboardView.php');
+        require('view/backend/dashboardView.php');
     }
 
-    public function logout() 
+    function logout() 
     {
     
     }
 
-    public function checkLogin()
+    function checkLogin()
     {
 
     }
-}
