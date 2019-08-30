@@ -1,7 +1,8 @@
 <?php
-require('controller/frontend/Home.php');
-require('controller/backend/UserController.php');
-// include_once('_config.php');
+
+include_once('_config.php');
+require_once(CONTROLLERFRONT.'Home.php');
+require_once(CONTROLLERBACK.'UserController.php');
 
 try 
 {

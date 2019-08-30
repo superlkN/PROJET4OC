@@ -1,16 +1,16 @@
 <?php
 
-require_once('model/AuthManager.php');
+require_once(MODEL.'AuthManager.php');
 
 
     function showLogin()
     {
-        require('view/backend/login.php');
+        require(VIEWBACK.'login.php');
     }
 
     function showDash()
     {
-        require('view/backend/dashboardView.php');
+        require(VIEWBACK.'dashboardView.php');
     }
 
     function logout() 

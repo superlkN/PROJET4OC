@@ -1,7 +1,7 @@
 <?php
 // Chargement des classes
-require_once('model/ChapitreManager.php');
-require_once('model/CommentManager.php');
+require_once(MODEL.'ChapitreManager.php');
+require_once(MODEL.'CommentManager.php');
 
 
 
@@ -11,7 +11,7 @@ require_once('model/CommentManager.php');
         $chapitre = $chapitreManager->getChapitres();
         $auteur = $chapitreManager->getAuteur();
   
-        require('view/frontend/chapitresView.php');
+        require(VIEWFRONT.'chapitresView.php');
     }
     function showPost()
     {
@@ -21,7 +21,7 @@ require_once('model/CommentManager.php');
         $chapitre = $chapitreManager->getChapitre($_GET['id']);
         $comments = $commentManager->getComments($_GET['id']); 
     
-        require('view/frontend/chapView.php');
+        require(VIEWFRONT.'chapView.php');
     }
 
     function addComment($postId, $author, $comment)

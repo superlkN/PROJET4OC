@@ -2,7 +2,7 @@
 
 namespace P4OC\site\Model;
 
-require_once("model/Manager.php");
+require_once(MODEL."Manager.php");
 
 class ChapitreManager extends Manager
 {
