@@ -16,28 +16,14 @@ h1 {
     color: red;
 }
 
+#headerChap {
+    position: relative;
+}
+
 .auteur {
     border: solid;
 }
 
-.frm{
-    border: solid gray 1px;
-    width: 20%;
-    border-radius: 5px;
-    margin: 100px auto;
-    background: white;
-    padding: 50px;
-    color: black;
-}
-
-#btn {
-    color: #fff;
-    background: #337ab7;
-    padding: 5px;
-    margin-left: 69%;
-}
-
-#headerChap {
-    display: flex;
-    
+.text-center {
+    text-align: center;
 }

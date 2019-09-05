@@ -44,6 +44,18 @@ try
         {
             showDash();
         }
+        elseif ($_GET['action'] == 'showInscription')
+        {
+            showInscription();
+        }
+        elseif ($_GET['action'] == 'showDash')
+        {
+            showDash();
+        }
+        elseif ($_GET['action'] == 'logout')
+        {
+            logout();
+        }
     }
     else 
     {

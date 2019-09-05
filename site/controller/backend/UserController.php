@@ -10,12 +10,20 @@ require_once(MODEL.'AuthManager.php');
 
     function showDash()
     {
-        require(VIEWBACK.'dashboardView.php');
+        require(VIEWBACK.'dashboard.php');
+    }
+
+    function showInscription()
+    {
+        require(VIEWBACK.'inscription.php');
     }
 
     function logout() 
     {
-    
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+        header("Location: index.php?action=showLogin"); 
     }
 
     function checkLogin()
