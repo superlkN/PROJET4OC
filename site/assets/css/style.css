@@ -3,7 +3,7 @@ body {
     color: whitesmoke;
 }
 
-a {
+.suite {
     text-decoration: none;
     color: white;
     border: solid;
@@ -14,11 +14,10 @@ a {
 
 h1 {
     color: red;
+    text-align: center;
 }
 
-#headerChap {
-    position: relative;
-}
+
 
 .auteur {
     border: solid;
@@ -26,4 +25,19 @@ h1 {
 
 .text-center {
     text-align: center;
+}
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    border: solid;
+    border-radius: 10%;
+    color: white;
+    width: 170px;
+    margin-bottom: 10px;
+    font-size : 1.3em;
 }

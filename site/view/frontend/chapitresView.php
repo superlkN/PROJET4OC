@@ -3,7 +3,12 @@
 <?php ob_start(); ?>
 <div id="headerChap">
 <h1>Voyage en Alaska !</h1>
-<a href="index.php?action=showLogin"> Login </a>
+<div class="menu">
+<ul>
+    <li><a href="index.php?action=showLogin"> Connexion </a></li>
+    <li><a href="index.php?action=showInscription"> Inscription </a></li>
+</ul>
+</div>
 </div>
 <?php
 while ($data = $auteur->fetch())
@@ -47,7 +52,7 @@ while ($data2 = $chapitre->fetch())
                 echo $length . ".......";
             ?>
             <br />
-            <em><a href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
+            <em><a class="suite" href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
         </p>
     </div>
 <?php

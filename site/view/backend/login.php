@@ -30,8 +30,8 @@ if(isset($_POST['formconnexion'])) {
 ?>
       <div align="center">
          <h2>Connexion</h2>
-         <a href="index.php?action=showInscription">Inscription</a>
          <a href="index.php">Accueil</a>
+         <a href="index.php?action=showInscription">Inscription</a>
          <br /><br />
          <form method="POST" action="">
             <input type="email" name="mailconnect" placeholder="Mail" />

@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Espace Client - Profil'; ?>
 
 <?php ob_start(); ?>
 
@@ -26,6 +26,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          ?>
          <br />
          <a href="index.php?action=logout">Se déconnecter</a>
+         <a href="index.php"> Blog </a>
          <?php
          }
          ?>
