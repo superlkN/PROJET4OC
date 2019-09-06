@@ -9,8 +9,12 @@ if(isset($_POST['forminscription'])) {
    $pseudo = htmlspecialchars($_POST['pseudo']);
    $mail = htmlspecialchars($_POST['mail']);
    $mail2 = htmlspecialchars($_POST['mail2']);
-   $mdp = sha1($_POST['mdp']);
-   $mdp2 = sha1($_POST['mdp2']);
+   $mdp = $_POST['mdp'];
+   $mdp2 = $_POST['mdp2'];
+   print_r($mdp);
+   echo "<br>";
+   print_r($mdp2);
+   
    if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
       $pseudolength = strlen($pseudo);
       if($pseudolength <= 255) {
@@ -21,8 +25,9 @@ if(isset($_POST['forminscription'])) {
                $mailexist = $reqmail->rowCount();
                if($mailexist == 0) {
                   if($mdp == $mdp2) {
+                     $mdp_hash = password_hash($mdp, PASSWORD_BCRYPT);
                      $insertmbr = $bdd->prepare("INSERT INTO users(pseudo, mail, motdepasse) VALUES(?, ?, ?)");
-                     $insertmbr->execute(array($pseudo, $mail, $mdp));
+                     $insertmbr->execute(array($pseudo, $mail, $mdp_hash));
                      $erreur = "Votre compte a bien été créé !";
                      header('Location:index.php?action=showLogin');
                   } else {

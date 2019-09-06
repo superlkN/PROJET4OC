@@ -28,5 +28,5 @@ require_once(MODEL.'AuthManager.php');
 
     function checkLogin()
     {
-
+        
     }

@@ -1,4 +1,4 @@
-<?php $title = 'Espace Client - Profil'; ?>
+<?php $title = 'Espace Client - Dashboard'; ?>
 
 <?php ob_start(); ?>
 
@@ -15,7 +15,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 ?>
 
       <div align="center">
-         <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
+         <h2>Dashboard de <?php echo $userinfo['pseudo']; ?></h2>
          <br /><br />
          Pseudo = <?php echo $userinfo['pseudo']; ?>
          <br />
