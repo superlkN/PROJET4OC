@@ -13,14 +13,28 @@ if(isset($_GET['id']) && $_GET['id'] > 0) {
    $requser->execute(array($getid));
    $userinfo = $requser->fetch();
 ?>
+<p><a href="index.php"> Accueil </a></p>
 
-      <div align="center">
-         <h2>Dashboard de <?php echo $userinfo['pseudo']; ?></h2>
-         <br /><br />
-         Pseudo = <?php echo $userinfo['pseudo']; ?>
-         <br />
-         Mail = <?php echo $userinfo['mail']; ?>
-         <br />
+<h2> Mes dernière publications :</h2>
+
+         <?php
+         while ($data = $chapitre->fetch())
+         {
+         ?>
+         <div class="news">
+
+            <h3>
+               <?= htmlspecialchars($data['title']) ?>
+            </h3>
+
+            <em><a class="suite" href="index.php?action=viewChapitre&amp;id=<?= $data['id'] ?>">Modifier</a></em>
+
+         </div>
+         <?php
+         }
+         $chapitre->closeCursor();
+         ?>
+
          <?php
          if(isset($_SESSION['id']) && $userinfo['id'] == $_SESSION['id']) {
          ?>

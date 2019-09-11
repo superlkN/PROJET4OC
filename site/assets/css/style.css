@@ -17,7 +17,9 @@ h1 {
     text-align: center;
 }
 
-
+a {
+    color: white;
+}
 
 .auteur {
     border: solid;
@@ -41,3 +43,7 @@ li {
     margin-bottom: 10px;
     font-size : 1.3em;
 }
+
+
+
+

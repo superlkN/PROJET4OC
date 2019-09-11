@@ -75,6 +75,14 @@ try
         {
             dashboard($_GET['id']);
         } */
+
+        elseif ($_GET['action'] == 'viewChapitre')
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    viewChapitre($_GET['id']);
+                } 
+        }
     }
     else 
     {

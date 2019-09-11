@@ -1,6 +1,7 @@
 <?php
 
 require_once(MODEL.'AuthManager.php');
+require_once(MODEL.'ChapitreManager.php');
 
 
     function showLogin()
@@ -10,6 +11,9 @@ require_once(MODEL.'AuthManager.php');
 
     function showDash()
     {
+        $chapitreManager = new P4OC\site\Model\ChapitreManager();
+        $chapitre = $chapitreManager->getChapitres();
+
         require(VIEWBACK.'dashboard.php');
     }
 
@@ -43,4 +47,12 @@ require_once(MODEL.'AuthManager.php');
         $dashboard = $authManager->dashboardManager($getid);
     }
     */
+
+    function viewChapitre($postId)
+    {
+        $chapitreManager = new P4OC\site\Model\ChapitreManager();
+        $chapitre = $chapitreManager->getChapitre($_GET['id']);
+
+        require(VIEWBACK.'editChapView.php');
+    }
 
