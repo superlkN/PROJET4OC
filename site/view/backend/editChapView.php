@@ -11,9 +11,7 @@
  
     <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
     <div>
-        <p>Titre : <?= $chapitre['title'] ?></p>
-        <label for="title">Titre</label><br />
-        <textarea id="content" name="content"><?= $chapitre['content'] ?></textarea>
+        <textarea class="content" name="content"><?= $chapitre['content'] ?></textarea>
     </div>
     <div>
         <input type="submit" value="Modifier" />

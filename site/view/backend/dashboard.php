@@ -13,7 +13,6 @@ if(isset($_GET['id']) && $_GET['id'] > 0) {
    $requser->execute(array($getid));
    $userinfo = $requser->fetch();
 ?>
-<p><a href="index.php"> Accueil </a></p>
 
 <h2> Mes dernière publications :</h2>
 
