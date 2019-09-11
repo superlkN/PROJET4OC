@@ -20,13 +20,27 @@ require_once(MODEL.'AuthManager.php');
 
     function logout() 
     {
-        session_start();
-        $_SESSION = array();
-        session_destroy();
-        header("Location: index.php?action=showLogin"); 
+        $authManager = new P4OC\site\Model\AuthManager();
+        $auth = $authManager->logoutManager();
     }
 
-    function checkLogin()
+    function checkLogin($mailconnect)
     {
+        $authManager = new P4OC\site\Model\AuthManager();
+        $auth = $authManager->checkLoginManager($mailconnect);  
+    }
+
+    function inscription($pseudo, $mail, $mdp_hash) 
+    {
+        $authManager = new P4OC\site\Model\AuthManager();
+        $auth = $authManager->inscriptionManager($pseudo, $mail, $mdp_hash);
         
     }
+    /*
+    function dashboard($getid) 
+    {
+        $authManager = new P4OC\site\Model\AuthManager();
+        $dashboard = $authManager->dashboardManager($getid);
+    }
+    */
+

@@ -56,6 +56,25 @@ try
         {
             logout();
         }
+        elseif ($_GET['action'] == 'inscription')
+        {
+            if(isset($_POST['forminscription'])) 
+            {
+                inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
+            }
+        }
+        elseif ($_GET['action'] == 'login')
+        {
+            if(isset($_POST['formconnexion'])) 
+            {
+                checklogin($_POST['mailconnect']);
+            }
+        }
+        /*
+        elseif ($_GET['action'] == 'dashboard')
+        {
+            dashboard($_GET['id']);
+        } */
     }
     else 
     {

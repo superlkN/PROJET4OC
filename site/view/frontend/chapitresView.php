@@ -1,12 +1,21 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
+
+<?php session_start(); ?>
+
 <div id="headerChap">
 <h1>Voyage en Alaska !</h1>
 <div class="menu">
 <ul>
+    <?php if (!isset($_SESSION['id'])) { ?>
     <li><a href="index.php?action=showLogin"> Connexion </a></li>
     <li><a href="index.php?action=showInscription"> Inscription </a></li>
+    <?php } ?>
+    <?php if (isset($_SESSION['id'])) { ?>
+    <li><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Dashboard</a></li>
+    <a href="index.php?action=logout">Se déconnecter</a>
+    <?php } ?>
 </ul>
 </div>
 </div>
