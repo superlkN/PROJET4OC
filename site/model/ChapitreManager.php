@@ -6,7 +6,7 @@ require_once(MODEL."Manager.php");
 
 class ChapitreManager extends Manager
 {
-    public function getChapitres()
+    public function getChapitres() // faire une requete preparé 
     {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, content, nom_de_limage, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapitres ORDER BY creation_date ASC LIMIT 0, 10');

@@ -56,19 +56,15 @@ try
         {
             logout();
         }
-        elseif ($_GET['action'] == 'inscription')
+        elseif ($_GET['action'] == 'inscription' && isset($_POST['forminscription'])) 
         {
-            if(isset($_POST['forminscription'])) 
-            {
-                inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
-            }
+            
+            inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
+            
         }
-        elseif ($_GET['action'] == 'login')
+        elseif ($_GET['action'] == 'login' && isset($_POST['formconnexion']))
         {
-            if(isset($_POST['formconnexion'])) 
-            {
-                checklogin($_POST['mailconnect']);
-            }
+            checklogin($_POST['mailconnect']); 
         }
         /*
         elseif ($_GET['action'] == 'dashboard')
@@ -76,12 +72,9 @@ try
             dashboard($_GET['id']);
         } */
 
-        elseif ($_GET['action'] == 'viewChapitre')
+        elseif ($_GET['action'] == 'viewChapitre' && isset($_GET['id']) && $_GET['id'] > 0)
         {
-            if (isset($_GET['id']) && $_GET['id'] > 0)
-                {
-                    viewChapitre($_GET['id']);
-                } 
+            viewChapitre($_GET['id']); 
         }
     }
     else 

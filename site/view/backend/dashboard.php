@@ -17,16 +17,16 @@ if(isset($_GET['id']) && $_GET['id'] > 0) {
 <h2> Mes dernière publications :</h2>
 
          <?php
-         while ($data = $chapitre->fetch())
+         foreach($chapitres as $k => $chapitre)
          {
          ?>
          <div class="news">
 
             <h3>
-               <?= htmlspecialchars($data['title']) ?>
+               <?= htmlspecialchars($chapitre['title']) ?>
             </h3>
 
-            <em><a class="suite" href="index.php?action=viewChapitre&amp;id=<?= $data['id'] ?>">Modifier</a></em>
+            <em><a class="suite" href="index.php?action=viewChapitre&amp;id=<?= $chapitre['id'] ?>">Modifier</a></em>
 
          </div>
          <?php
