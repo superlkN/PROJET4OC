@@ -36,15 +36,14 @@ class AuthManager extends Manager
         return $userinfo;
     }
 
-    /*
     public function dashboardManager($getid)
     {
-        if(isset($_GET['id']) && $_GET['id'] > 0) {
-            $db = $this->dbConnect();
-            $getid = intval($_GET['id']);
-            $requser = $db->prepare('SELECT * FROM users WHERE id = ?');
-            $requser->execute(array($getid));
-        }
+        $db = $this->dbConnect();
+        $requser = $db->prepare('SELECT * FROM users WHERE id = ?');
+        $requser->execute(array($getid));
+        $userinfo = $requser->fetch();
+
+        return $userinfo;
     }
-    */ 
+     
 }

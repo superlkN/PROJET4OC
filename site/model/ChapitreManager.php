@@ -9,7 +9,8 @@ class ChapitreManager extends Manager
     public function getChapitres() // faire une requete preparé 
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, nom_de_limage, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapitres ORDER BY creation_date ASC LIMIT 0, 10');
+        $req = $db->prepare('SELECT id, title, content, nom_de_limage, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapitres ORDER BY creation_date ASC LIMIT 0, 10');
+        $req->execute();
 
         return $req;
     }
@@ -38,9 +39,13 @@ class ChapitreManager extends Manager
 
     }
 
-    public function updateChapitre() 
+    public function editChapitre($id, $chapitre) 
     {
+        $db = $this->dbConnect();
+        $chapitres = $db->prepare('UPDATE chapitres SET content = ?, creation_date = NOW() WHERE id = ?');
+        $affectedChapitre = $chapitres->execute(array($chapitre, $id));
 
+        return $affectedChapitre;
     }
 
     public function deleteChapitre()

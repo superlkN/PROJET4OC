@@ -66,11 +66,30 @@ try
         {
             checklogin($_POST['mailconnect']); 
         }
-        /*
+        
         elseif ($_GET['action'] == 'dashboard')
         {
             dashboard($_GET['id']);
-        } */
+        } 
+
+        elseif ($_GET['action'] == 'modifyChapitre')
+        {
+                if(!empty($_GET['id']) && $_GET['id'] > 0)
+                {
+                    if(!empty($_POST['content']))
+                    {
+                        modifyChapitre($_GET['id'], $_POST['content']);  
+                    }
+                    else
+                    {
+                        throw new Exception('Tous les champs ne sont pas remplis !');
+                    }
+                }  
+                else
+                {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
+        } 
 
         elseif ($_GET['action'] == 'viewChapitre' && isset($_GET['id']) && $_GET['id'] > 0)
         {

@@ -1,9 +1,17 @@
 <?php $title = htmlspecialchars($chapitre['title']); ?>
  
 <?php ob_start(); ?>
+
+<?php session_start() ?>
+
 <h1>Mon super blog !</h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
- 
+
+<?php if (isset($_SESSION['id'])) { ?>
+    <p><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Dashboard</a></p>
+    <a href="index.php?action=logout">Se déconnecter</a>
+<?php } ?>
+
 <div class="news">
     <h3>
         <?= htmlspecialchars($chapitre['title']) ?>

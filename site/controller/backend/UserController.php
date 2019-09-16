@@ -114,13 +114,27 @@ require_once(MODEL.'ChapitreManager.php');
         
         
     }
-    /*
+    
     function dashboard($getid) 
     {
         $authManager = new P4OC\site\Model\AuthManager();
-        $dashboard = $authManager->dashboardManager($getid);
+        
+        if(isset($_GET['id']) && $_GET['id'] > 0) {
+            $getid = intval($_GET['id']);
+            $dashboard = $authManager->dashboardManager($getid);
+        }
     }
-    */
+    
+    function modifyChapitre($id, $chapitre)
+    {
+        $chapitreManager = new P4OC\site\Model\ChapitreManager();
+      
+        $affectedChapitre = $chapitreManager->editChapitre($id, $chapitre);
+        
+        header('Location:index.php?action=showPost&id=' . $id);
+        exit; 
+        
+    }
 
     function viewChapitre($postId)
     {

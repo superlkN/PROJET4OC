@@ -4,19 +4,12 @@
 
 <?php
 session_start();
-
-$bdd = new \PDO('mysql:host=localhost;dbname=projet4_oc;charset=utf8', 'root', '');
-
-if(isset($_GET['id']) && $_GET['id'] > 0) {
-   $getid = intval($_GET['id']);
-   $requser = $bdd->prepare('SELECT * FROM users WHERE id = ?');
-   $requser->execute(array($getid));
-   $userinfo = $requser->fetch();
 ?>
 
 <h2> Mes dernière publications :</h2>
 
          <?php
+         
          foreach($chapitres as $k => $chapitre)
          {
          ?>
@@ -31,11 +24,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0) {
          </div>
          <?php
          }
-         $chapitre->closeCursor();
          ?>
-
+         
          <?php
-         if(isset($_SESSION['id']) && $userinfo['id'] == $_SESSION['id']) {
+         if(isset($_SESSION['id'])) {
          ?>
          <br />
          <a href="index.php?action=logout">Se déconnecter</a>
@@ -44,10 +36,6 @@ if(isset($_GET['id']) && $_GET['id'] > 0) {
          }
          ?>
       </div>
-
-<?php   
-}
-?>
 
 <?php $content = ob_get_clean(); ?>
 
