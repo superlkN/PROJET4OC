@@ -35,6 +35,7 @@ require_once(MODEL.'CommentManager.php');
         }
         else {
             header('Location:index.php?action=showPost&id=' . $postId);
+            exit;
         }
     } 
 

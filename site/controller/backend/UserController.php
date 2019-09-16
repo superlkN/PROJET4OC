@@ -27,7 +27,8 @@ require_once(MODEL.'ChapitreManager.php');
         session_start();
         $_SESSION = array();
         session_destroy();
-        header("Location: index.php?action=showLogin"); 
+        header("Location: index.php?action=showLogin");
+        exit;
     }
 
     function checkLogin($mailconnect)
@@ -55,6 +56,7 @@ require_once(MODEL.'ChapitreManager.php');
                 $_SESSION['pseudo'] = $auth['pseudo'];
                 $_SESSION['mail'] = $auth['mail'];
                 header("Location: index.php?action=showDash&id=".$_SESSION['id']);
+                exit;
                 } 
             } else {
                 echo "Mauvais mail ou mot de passe !";
@@ -87,8 +89,8 @@ require_once(MODEL.'ChapitreManager.php');
                         if($mdp == $mdp2) {
                             $mdp_hash = password_hash($mdp, PASSWORD_DEFAULT);
                             $authUser = $authManager->getUser($pseudo, $mail, $mdp_hash);
-                            
                             header('Location:index.php?action=showLogin');
+                            exit;
                             
                         } else {
                             echo "Vos mots de passes ne correspondent pas !";
