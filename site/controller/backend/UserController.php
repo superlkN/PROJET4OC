@@ -42,13 +42,18 @@ require_once(MODEL.'ChapitreManager.php');
         if(!empty($mailconnect) && !empty($mdpconnect)) {
 
             $auth = $authManager->checkLoginManager($mailconnect);
+            echo "<pre>";
+            print_r($auth);
+            echo "</pre>";
             
-            if($userexist == 1) {
+
+            
+            if(!empty($auth)) {
                 
-                if (password_verify($mdpconnect, $userinfo['motdepasse'])) {
-                $_SESSION['id'] = $userinfo['id'];
-                $_SESSION['pseudo'] = $userinfo['pseudo'];
-                $_SESSION['mail'] = $userinfo['mail'];
+                if (password_verify($mdpconnect, $auth['motdepasse'])) {
+                $_SESSION['id'] = $auth['id'];
+                $_SESSION['pseudo'] = $auth['pseudo'];
+                $_SESSION['mail'] = $auth['mail'];
                 header("Location: index.php?action=showDash&id=".$_SESSION['id']);
                 } 
             } else {
@@ -69,21 +74,20 @@ require_once(MODEL.'ChapitreManager.php');
         $mail2 = htmlspecialchars($_POST['mail2']);
         $mdp = $_POST['mdp'];
         $mdp2 = $_POST['mdp2'];
-        print_r($mdp);
-        echo "<br>";
-        print_r($mdp2);
         
         if(!empty($_POST['pseudo']) && !empty($_POST['mail']) && !empty($_POST['mail2']) && !empty($_POST['mdp']) && !empty($_POST['mdp2'])) {
             $pseudolength = strlen($pseudo);
             if($pseudolength <= 255) {
                 if($mail == $mail2) {
                     if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                        $auth = $authManager->getMail($mail);
+                        $authMail = $authManager->getMail($mail);
+                        
                      
-                    if($mailexist == 0) {
+                    if(empty($authMail)) {
                         if($mdp == $mdp2) {
                             $mdp_hash = password_hash($mdp, PASSWORD_DEFAULT);
-                            $auth = $authManager->getUser($pseudo, $mail, $mdp_hash);
+                            $authUser = $authManager->getUser($pseudo, $mail, $mdp_hash);
+                            
                             header('Location:index.php?action=showLogin');
                             
                         } else {

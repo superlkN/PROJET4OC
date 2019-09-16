@@ -11,6 +11,7 @@ class AuthManager extends Manager
         $db = $this->dbConnect();
         $insertmbr = $db->prepare("INSERT INTO users(pseudo, mail, motdepasse) VALUES(?, ?, ?)");
         $insertmbr->execute(array($pseudo, $mail, $mdp_hash));
+        $memberinfo = $insertmbr->fetch();
 
         return $insertmbr;
     }
@@ -20,9 +21,9 @@ class AuthManager extends Manager
         $db = $this->dbConnect();
         $reqmail = $db->prepare("SELECT * FROM users WHERE mail = ?");
         $reqmail->execute(array($mail));
-        $mailexist = $reqmail->rowCount();
+        $mailinfo = $reqmail->fetch();
 
-        return $reqmail;
+        return $mailinfo;
     }
 
     public function checkLoginManager($mailconnect)
@@ -31,9 +32,8 @@ class AuthManager extends Manager
         $requser = $db->prepare("SELECT * FROM users WHERE mail = ?");
         $requser->execute(array($mailconnect));
         $userinfo = $requser->fetch();
-        $userexist = $requser->rowCount();
 
-        return $requser;
+        return $userinfo;
     }
 
     /*
