@@ -11,12 +11,19 @@
  
     <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
     <div>
-        <textarea class="content" name="content"><?= $chapitre['content'] ?></textarea>
+        <textarea id="textarea" class="content" name="content"><?= $chapitre['content'] ?></textarea>
     </div>
     <div>
         <input type="submit" value="Modifier" />
     </div>
 </form>
+
+<script>
+tinymce.init({
+    selector: '#textarea',
+    height:500
+})
+</script>
   
 <?php $content = ob_get_clean(); ?>
   
