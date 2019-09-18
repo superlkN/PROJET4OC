@@ -95,6 +95,11 @@ try
         {
             viewChapitre($_GET['id']); 
         }
+
+        elseif ($_GET['action'] == 'report') 
+        {
+            report($_GET['id']);
+        }
     }
     else 
     {

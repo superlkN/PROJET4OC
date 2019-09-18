@@ -39,6 +39,13 @@ require_once(MODEL.'CommentManager.php');
         }
     } 
 
+    function report($id)
+    {
+        $commentManager = new P4OC\site\Model\CommentManager();
+        $comment = $commentManager->reportComment($id);
+
+    }
+
      
 
   

@@ -2,6 +2,7 @@
 
 require_once(MODEL.'AuthManager.php');
 require_once(MODEL.'ChapitreManager.php');
+require_once(MODEL.'CommentManager.php');
 
 
     function showLogin()
@@ -13,6 +14,8 @@ require_once(MODEL.'ChapitreManager.php');
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitres = $chapitreManager->getChapitres();
+        $commentManager = new P4OC\site\Model\CommentManager();
+        $comments = $commentManager->getReportedComments();
 
         require(VIEWBACK.'dashboard.php');
     }

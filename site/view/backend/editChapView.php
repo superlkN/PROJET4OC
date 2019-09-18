@@ -21,8 +21,12 @@
 <script>
 tinymce.init({
     selector: '#textarea',
-    height:500
-})
+    height:500,
+    forced_root_block : false,
+    force_br_newlines : true,
+    force_p_newlines : false,
+    
+});
 </script>
   
 <?php $content = ob_get_clean(); ?>

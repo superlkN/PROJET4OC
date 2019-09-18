@@ -25,6 +25,21 @@ session_start();
          <?php
          }
          ?>
+
+         <?php
+
+         while ($comment = $comments->fetch())
+         {
+
+         ?>
+            <h2> Commentaires signalés</h2>
+            <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></p>
+            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+         <?php 
+
+         }
+
+         ?>
          
          <?php
          if(isset($_SESSION['id'])) {
@@ -35,7 +50,6 @@ session_start();
          <?php
          }
          ?>
-      </div>
 
 <?php $content = ob_get_clean(); ?>
 
