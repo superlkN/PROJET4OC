@@ -12,12 +12,22 @@ require_once(MODEL.'CommentManager.php');
 
     function showDash()
     {
+        session_start();
+
+        if ($_SESSION['isadmin'] == 1)
+        {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitres = $chapitreManager->getChapitres();
         $commentManager = new P4OC\site\Model\CommentManager();
         $comments = $commentManager->getReportedComments();
 
         require(VIEWBACK.'dashboard.php');
+        } 
+        else 
+        {
+            echo "Vous n'avez pas accès à cette page, vous allez être redirigé à la page d'accueil.";
+            header( "refresh:3;url=index.php" );
+        }
     }
 
     function showInscription()
@@ -55,11 +65,20 @@ require_once(MODEL.'CommentManager.php');
             if(!empty($auth)) {
                 
                 if (password_verify($mdpconnect, $auth['motdepasse'])) {
-                $_SESSION['id'] = $auth['id'];
-                $_SESSION['pseudo'] = $auth['pseudo'];
-                $_SESSION['mail'] = $auth['mail'];
-                header("Location: index.php?action=showDash&id=".$_SESSION['id']);
-                exit;
+                    $_SESSION['isadmin'] = $auth['isadmin'];
+
+                    if ($_SESSION['isadmin'] == 1) {
+                        $_SESSION['id'] = $auth['id'];
+                        $_SESSION['pseudo'] = $auth['pseudo'];
+                        $_SESSION['mail'] = $auth['mail'];
+                        header("Location: index.php?action=showDash");
+                        exit;
+                    } else {
+                        $_SESSION['id'] = $auth['id'];
+                        $_SESSION['pseudo'] = $auth['pseudo'];
+                        $_SESSION['mail'] = $auth['mail'];
+                        header("Location: index.php");
+                    }
                 } 
             } else {
                 echo "Mauvais mail ou mot de passe !";

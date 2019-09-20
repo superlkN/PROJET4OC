@@ -7,8 +7,11 @@
 <h1>Mon super blog !</h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
+<?php if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] == 1) { ?>
+    <li><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Dashboard</a></li>
+<?php } ?>
+
 <?php if (isset($_SESSION['id'])) { ?>
-    <p><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Dashboard</a></p>
     <a href="index.php?action=logout">Se déconnecter</a>
 <?php } ?>
 

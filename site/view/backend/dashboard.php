@@ -2,10 +2,6 @@
 
 <?php ob_start(); ?>
 
-<?php
-session_start();
-?>
-
 <a class="suite" href="index.php?action=viewCreateChap">Ecrire un article</a>
 <h2> Mes dernière publications :</h2>
 

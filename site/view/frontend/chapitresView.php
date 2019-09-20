@@ -12,8 +12,12 @@
     <li><a href="index.php?action=showLogin"> Connexion </a></li>
     <li><a href="index.php?action=showInscription"> Inscription </a></li>
     <?php } ?>
-    <?php if (isset($_SESSION['id'])) { ?>
+
+    <?php if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] == 1) { ?>
     <li><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Dashboard</a></li>
+    <?php } ?>
+
+    <?php if (isset($_SESSION['id'])) { ?>
     <a href="index.php?action=logout">Se déconnecter</a>
     <?php } ?>
 </ul>
