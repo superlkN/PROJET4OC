@@ -6,7 +6,7 @@ require_once(MODEL."Manager.php");
 
 class ChapitreManager extends Manager
 {
-    public function getChapitres() // faire une requete preparé 
+    public function getChapitres() 
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, nom_de_limage, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapitres ORDER BY creation_date ASC LIMIT 0, 10');
@@ -34,9 +34,13 @@ class ChapitreManager extends Manager
         return $req;
     }
 
-    public function addChapitre()
+    public function addChapitre($title, $content)
     {
+        $db = $this->dbConnect();
+        $req = $db->prepare("INSERT INTO chapitres(title, content, creation_date) VALUES (?, ?, NOW())");
+        $req->execute(array($title, $content));
 
+        return $req;
     }
 
     public function editChapitre($id, $chapitre) 
@@ -48,8 +52,14 @@ class ChapitreManager extends Manager
         return $affectedChapitre;
     }
 
-    public function deleteChapitre()
+    public function deleteChapitre($id)
     {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM chapitres WHERE id = ?');
+        $req->execute(array($id));
+        $delete = $req->fetch();
+
+        return $delete;
 
     }
 }

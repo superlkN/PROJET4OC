@@ -147,3 +147,34 @@ require_once(MODEL.'CommentManager.php');
         require(VIEWBACK.'editChapView.php');
     }
 
+    function createChapitre($title, $content)
+    {
+        $chapitreManager = new P4OC\site\Model\ChapitreManager();
+        $createChapitre = $chapitreManager->addChapitre($title, $content);
+
+        header('Location:index.php?action=showDash');
+        exit;
+    }
+
+    function viewCreateChap()
+    {
+        require(VIEWBACK.'newChapView.php');
+    }   
+
+    function deleteChap($id)
+    {
+        $chapitreManager = new P4OC\site\Model\ChapitreManager();
+        $chapitre = $chapitreManager->deleteChapitre($id);
+
+        header('Location:index.php?action=showDash');
+    }
+
+    function deleteComment($id)
+    {
+        $commentManager = new P4OC\site\Model\CommentManager();
+        $delete = $commentManager->deleteComments($id);
+
+        header('Location:index.php?action=showDash');
+        exit;
+    }
+

@@ -44,6 +44,9 @@ require_once(MODEL.'CommentManager.php');
         $commentManager = new P4OC\site\Model\CommentManager();
         $comment = $commentManager->reportComment($id);
 
+        header('Location:index.php');
+        exit;
+
     }
 
      

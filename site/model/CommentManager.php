@@ -17,7 +17,7 @@ class CommentManager extends Manager
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date, report) VALUES(?, ?, ?, NOW(), 0)');
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 
         return $affectedLines;
@@ -46,9 +46,18 @@ class CommentManager extends Manager
     public function getReportedComments()
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM comments WHERE report >= 10');
+        $req = $db->prepare('SELECT * FROM comments WHERE report >= 1 ORDER BY report DESC');
         $req->execute();
         
+
+        return $req;
+    }
+
+    public function deleteComments($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM comments WHERE id = ?');
+        $req->execute(array($id));
 
         return $req;
     }

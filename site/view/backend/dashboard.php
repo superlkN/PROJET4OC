@@ -6,6 +6,7 @@
 session_start();
 ?>
 
+<a class="suite" href="index.php?action=viewCreateChap">Ecrire un article</a>
 <h2> Mes dernière publications :</h2>
 
          <?php
@@ -20,6 +21,7 @@ session_start();
             </h3>
 
             <em><a class="suite" href="index.php?action=viewChapitre&amp;id=<?= $chapitre['id'] ?>">Modifier</a></em>
+            <a class="suite" href="index.php?action=deleteChapitre&amp;id=<?= $chapitre['id']; ?>">Supprimer</a>
 
          </div>
          <?php
@@ -34,7 +36,8 @@ session_start();
          ?>
             <h2> Commentaires signalés</h2>
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></p>
-            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?> (signalement : <?= $comment['report'] ?>) <a href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>">delete</a></p>
+            
          <?php 
 
          }

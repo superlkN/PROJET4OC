@@ -21,7 +21,7 @@
     <?php echo '<img width=700" height="450"src="assets/img/'.$chapitre['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
      
     <p>
-        <?= nl2br(htmlspecialchars($chapitre['content'])) ?>
+        <?= $chapitre['content'] ?>
     </p>
 </div>
  

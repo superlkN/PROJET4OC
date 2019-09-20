@@ -100,6 +100,32 @@ try
         {
             report($_GET['id']);
         }
+
+        elseif ($_GET['action'] == 'deleteChapitre')
+        {
+            deleteChap($_GET['id']);
+        }
+
+        elseif ($_GET['action'] == 'createChapitre')
+        {
+            if (!empty($_POST['title']) && !empty($_POST['content'])) {
+				createChapitre($_POST['title'], $_POST['content']);
+            }
+            else 
+            {
+                echo "contenu vide";
+            }
+        }
+
+        elseif ($_GET['action'] == 'viewCreateChap')
+        {
+            viewCreateChap();
+        }
+
+        elseif ($_GET['action'] == 'deleteComment')
+        {
+            deleteComment($_GET['id']);
+        }
     }
     else 
     {
