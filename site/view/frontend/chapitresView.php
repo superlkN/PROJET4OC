@@ -3,9 +3,9 @@
 <?php ob_start(); ?>
 
 <?php session_start(); ?>
-<div class="container">
-    <div id="headerChap">
-        <h1>Voyage en Alaska !</h1>
+
+<div class="headerChap">
+    <h1>Mon voyage en Alaska </h1>
         <div class="menu">
             <ul>
                 <?php if (!isset($_SESSION['id'])) { ?>
@@ -18,20 +18,17 @@
                 <?php } ?>
 
                 <?php if (isset($_SESSION['id'])) { ?>
-                <a href="index.php?action=logout">Se déconnecter</a>
+                <li><a href="index.php?action=logout">Se déconnecter</a></li>
                 <?php } ?>
             </ul>
         </div>
-    </div>
-
+</div>
 <?php
 while ($data = $auteur->fetch())
 {
 ?>
-    <div class="auteur">
-        <br>
-        <h2> A propos de l'auteur : </h2>
-        <br>
+    <br>
+    <div class="container auteur">
         <h3>
             <?= $data['nom_auteur'] ?>
         </h3>
@@ -39,20 +36,20 @@ while ($data = $auteur->fetch())
         <?php echo '<img width="400" height="200"src="assets/img/'.$data['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
         
         <p>
+            <br>
             <?= $data['content'] ?>
         </p>
     </div>
+    <br>
 <?php
 }
 ?>
-<br>
-<h2> Mes dernière publications :</h2>
-<br>
+
 <?php
 while ($data2 = $chapitre->fetch())
 {
 ?>
-    <div class="row">
+    <div class="container">
         <div class="news">
             <h3>
                 <?= htmlspecialchars($data2['title']) ?>
@@ -62,21 +59,20 @@ while ($data2 = $chapitre->fetch())
         <?php echo '<img width="350" height="200"src="assets/img/'.$data2['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
 
             <p>
+                <br>
                 <?php 
                     $length = nl2br(substr($data2['content'], 0, 352)); 
-                    echo $length . "...";
+                    echo $length . " [...]";
                 ?>
-                <br />
                 <em><a class="suite" href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
             </p>
         </div>
+        <br>
     </div>
 <?php
 }
 $chapitre->closeCursor();
 ?>
-
-</div>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -23,6 +23,7 @@
             <a class="suite" href="index.php?action=deleteChapitre&amp;id=<?= $chapitre['id']; ?>">Supprimer</a>
 
          </div>
+         <br>
 
          <?php
 
