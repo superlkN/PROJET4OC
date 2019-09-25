@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     color: snow;
-    height: 80px;
+    height: 100px;
 }
 
 li {
@@ -34,12 +34,13 @@ ul {
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
+  height: 100px;
 }
 
 li a {
   display: block;
   color: #000;
-  padding: 8px 16px;
+  padding: 13px 26px;
   text-decoration: none;
 }
 
@@ -54,7 +55,7 @@ li a:hover {
     display: flex;
     justify-content: space-between;
     color: snow;
-    height: 80px;
+    height: 100px;
 }
 
 .button1 {
@@ -172,5 +173,23 @@ li a:hover {
   font-size: 50px;
 }
 
- 
+@media screen and (max-width: 479px) {
+  .chapImg {
+    width: 400px;
+    height: 300px;
+  }
+}
 
+@media screen and (max-width: 1024px) {
+  .chapImg {
+    width: 650px;
+    height: 550px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chapImg {
+    width: 600px;
+    height: 450px;
+  }
+}

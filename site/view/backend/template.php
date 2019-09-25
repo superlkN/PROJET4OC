@@ -8,6 +8,10 @@
         <link href="<?php echo ASSETS;?>style.css" rel="stylesheet" />
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <meta name="viewport" content="width=768" />
+        <meta name="viewport" content="width=479" />
+        <meta name="viewport" content="width=1024" />
+        
     </head>
         
     <body>

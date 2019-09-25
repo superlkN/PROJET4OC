@@ -27,7 +27,7 @@
                 <em>le <?= $chapitre['creation_date_fr'] ?></em>
             </h3>
 
-            <?php echo '<img width=700" height="450"src="assets/img/'.$chapitre['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
+            <?php echo '<img class="chapImg" width=700" height="450"src="assets/img/'.$chapitre['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
             
             <p>
                 <br>
