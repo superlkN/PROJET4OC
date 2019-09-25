@@ -4,20 +4,27 @@
 
 <?php session_start() ?>
 
-<h1>Mon super blog !</h1>
-<p><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Retour au dashboard</a></p>
+<div class="headerDash">
+    <h1> Espace Client - Modifier</h1>
+    <ul>
+        <li><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Retour au dashboard</a></li>
+        <li> <a href="index.php"> Blog </a> </li>
+    </ul>
+</div>
+<div class="container">
+    <br>   
+    <h2>Modifier le <?= $chapitre['title'] ?></h2>
     
-<h2>Modifier <?= $chapitre['title'] ?></h2>
- 
-    <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
-    <div>
-        <textarea id="textarea" class="content" name="content"><?= $chapitre['content'] ?></textarea>
-    </div>
-    <div>
-        <input type="submit" value="Modifier" />
-    </div>
-</form>
-
+        <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
+        <div>
+            <textarea id="textarea" class="content" name="content"><?= $chapitre['content'] ?></textarea>
+        </div>
+        <div>
+            <br>
+            <input class="button1" type="submit" value="Modifier" />
+        </div>
+    </form>
+</div> 
 <script>
 tinymce.init({
     selector: '#textarea',

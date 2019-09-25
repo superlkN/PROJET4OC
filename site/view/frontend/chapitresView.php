@@ -62,9 +62,9 @@ while ($data2 = $chapitre->fetch())
                 <br>
                 <?php 
                     $length = nl2br(substr($data2['content'], 0, 352)); 
-                    echo $length . " [...]";
+                    echo $length;
                 ?>
-                <em><a class="suite" href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">Suite</a></em>
+                <em><a class="button3" href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">[...]</a></em>
             </p>
         </div>
         <br>

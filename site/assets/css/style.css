@@ -6,17 +6,9 @@
     height: 80px;
 }
 
-.suite {
-    text-decoration: none;
-}
-
 li {
     list-style-type: none;
     text-decoration: none;
-}
-
-body {
-    width: 100%;
 }
 
 .auteur {
@@ -30,7 +22,7 @@ body {
 
 .news {
     padding: 2%;
-    border: 1px solid #326fa8;
+    border: 1px solid #222;
     border-radius: 19px 19px 19px 19px;
     -moz-border-radius: 19px 19px 19px 19px;
     -webkit-border-radius: 19px 19px 19px 19px;
@@ -55,6 +47,129 @@ li a {
 li a:hover {
   background-color: #222;
   color: white;
+}
+
+.headerDash {
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    color: snow;
+    height: 80px;
+}
+
+.button1 {
+  background-color: #222; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: white;
+  color: #222;
+}
+
+.button2 {
+  background-color: #222; 
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2:hover {
+  background-color: white;
+  color: #222;
+}
+
+.button3 {
+  background-color: #eee; 
+  border: 1px solid;
+  color: #222;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button3:hover {
+  background-color: #222;
+  color: white;
+}
+
+.commentsDash {
+  padding: 2%;
+    background-color: #eee;
+    border: 0px solid;
+    border-radius: 19px 19px 19px 19px;
+    -moz-border-radius: 19px 19px 19px 19px;
+    -webkit-border-radius: 19px 19px 19px 19px;
+}
+
+.commentsChap {
+  padding: 2%;
+  background-color: #eee;
+  border: 0px solid;
+  border-radius: 19px 19px 19px 19px;
+  -moz-border-radius: 19px 19px 19px 19px;
+  -webkit-border-radius: 19px 19px 19px 19px;
+}
+
+.inputComments {
+  width: 400px;
+}
+.areaComments {
+  width : 400px;
+  height: 100px;
+}
+
+.login {
+  background-color: #eee;
+  border: 0px solid;
+  border-radius: 19px 19px 19px 19px;
+  -moz-border-radius: 19px 19px 19px 19px;
+  -webkit-border-radius: 19px 19px 19px 19px;
+}
+
+.titreLogin {
+  font-size: 50px;
+}
+
+.inscription {
+  background-color: #eee;
+  border: 0px solid;
+  border-radius: 19px 19px 19px 19px;
+  -moz-border-radius: 19px 19px 19px 19px;
+  -webkit-border-radius: 19px 19px 19px 19px;
+}
+
+.formInscription {
+  position: relative;
+  margin-right: 90px;
+}
+
+.titreInscription {
+  font-size: 50px;
 }
 
  

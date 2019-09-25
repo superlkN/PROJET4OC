@@ -12,19 +12,26 @@
 		
 	});
 </script>
-
-	<h1>Espace Client - Nouveau chapitre</h1>
+	<div class="headerDash">
+		<h1>Espace Client - Nouveau chapitre</h1>
+		<ul>
+			<li><a href="index.php?action=showDash">Dashboard</a></li>
+			<li> <a href="index.php"> Blog </a> </li>
+		</ul>
+	</div>
+	<br>
+	<div class="container">
 		<div>
-			<p><a href="index.php?action=showDash">Retour au menu</a></p>
-			<div>
-				<form action="index.php?action=createChapitre" method="post">
-					<label for="title">Titre : </label>
-					<input type="text" name="title" id="title" placeholder="Votre titre" size="80" /><br/>
-					<textarea id="textarea2" name="content" rows="40" cols="160"></textarea>
-					<input type="submit" value="Poster" />
-				</form>
-			</div>
+			<form action="index.php?action=createChapitre" method="post">
+				<label for="title">Titre : </label>
+				<input type="text" name="title" id="title" placeholder="Votre titre" size="80" /><br/>
+				<br>
+				<textarea id="textarea2" name="content" rows="" cols=""></textarea>
+				<br>
+				<input class="button1" type="submit" value="Poster" />
+			</form>
 		</div>
+	</div>
 
 
 <?php $content = ob_get_clean(); ?>
