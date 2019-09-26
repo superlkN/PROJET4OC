@@ -2,8 +2,6 @@
 
 <?php ob_start(); ?>
 
-<?php session_start(); ?>
-
 <div class="headerChap">
     <h1>Mon voyage en Alaska </h1>
         <div class="menu">

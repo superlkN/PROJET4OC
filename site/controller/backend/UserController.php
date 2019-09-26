@@ -12,7 +12,6 @@ require_once(MODEL.'CommentManager.php');
 
     function showDash()
     {
-        session_start();
 
         if ($_SESSION['isadmin'] == 1)
         {
@@ -37,7 +36,6 @@ require_once(MODEL.'CommentManager.php');
 
     function logout() 
     {
-        session_start();
         $_SESSION = array();
         session_destroy();
         header("Location: index.php?action=showLogin");
@@ -46,7 +44,6 @@ require_once(MODEL.'CommentManager.php');
 
     function checkLogin($mailconnect)
     {
-        session_start();
 
         $authManager = new P4OC\site\Model\AuthManager();
         $mailconnect = $_POST['mailconnect'];
@@ -56,11 +53,6 @@ require_once(MODEL.'CommentManager.php');
         if(!empty($mailconnect) && !empty($mdpconnect)) {
 
             $auth = $authManager->checkLoginManager($mailconnect);
-            echo "<pre>";
-            print_r($auth);
-            echo "</pre>";
-            
-
             
             if(!empty($auth)) {
                 

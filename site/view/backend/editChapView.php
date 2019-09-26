@@ -2,7 +2,6 @@
   
 <?php ob_start(); ?>
 
-<?php session_start() ?>
 
 <div class="headerDash">
     <h1> Espace Client - Modifier</h1>

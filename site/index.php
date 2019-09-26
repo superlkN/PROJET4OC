@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include_once('_config.php');
 require_once(CONTROLLERFRONT.'Home.php');
 require_once(CONTROLLERBACK.'UserController.php');

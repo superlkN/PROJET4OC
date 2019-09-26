@@ -2,9 +2,6 @@
 
 <?php ob_start(); ?>
 
-<?php
-session_start();
-?>
       <div class="headerDash">
          <h2>Espace Client - Connexion</h2>
          <div class="menu">
