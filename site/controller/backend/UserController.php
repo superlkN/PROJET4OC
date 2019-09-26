@@ -172,18 +172,19 @@ require_once(MODEL.'CommentManager.php');
         require(VIEWBACK.'newChapView.php');
     }   
 
-    function deleteChap($id)
-    {
-        $chapitreManager = new P4OC\site\Model\ChapitreManager();
-        $chapitre = $chapitreManager->deleteChapitre($id);
-
-        header('Location:index.php?action=showDash');
-    }
-
     function deleteComment($id)
     {
         $commentManager = new P4OC\site\Model\CommentManager();
         $delete = $commentManager->deleteComments($id);
+
+        header('Location:index.php?action=showDash');
+        exit;
+    }
+
+    function deleteChap($id)
+    {
+        $chapitreManager = new P4OC\site\Model\ChapitreManager();
+        $chapitre = $chapitreManager->deleteChapitre($id);
 
         header('Location:index.php?action=showDash');
         exit;

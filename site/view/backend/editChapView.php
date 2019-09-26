@@ -6,7 +6,7 @@
 <div class="headerDash">
     <h1> Espace Client - Modifier</h1>
     <ul>
-        <li><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Retour au dashboard</a></li>
+        <li><a href="index.php?action=showDash&id=<?=$_SESSION['id'] ?>">Dashboard</a></li>
         <li> <a href="index.php"> Blog </a> </li>
     </ul>
 </div>

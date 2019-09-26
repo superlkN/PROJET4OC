@@ -48,7 +48,7 @@
       </h3>
 
       <em><a class="button1" href="index.php?action=viewChapitre&amp;id=<?= $chapitre['id'] ?>">Modifier</a></em>
-      <a class="button1" href="index.php?action=deleteChapitre&amp;id=<?= $chapitre['id']; ?>">Supprimer</a>
+      <a class="button1" href="index.php?action=deleteChapitre&amp;id=<?= $chapitre['id'] ?>">Supprimer</a>
 
    </div>
    <br>
