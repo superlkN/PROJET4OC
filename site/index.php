@@ -80,7 +80,7 @@ try
                 {
                     if(!empty($_POST['content']))
                     {
-                        modifyChapitre($_GET['id'], $_POST['content']);  
+                        modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']);  
                     }
                     else
                     {

@@ -12,9 +12,9 @@
 </div>
 <div class="container">
     <br>   
-    <h2>Modifier le <?= $chapitre['title'] ?></h2>
-    
-        <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
+    <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
+        <label for="title">Titre : </label>
+        <input type="text" name="title" id="title" value="<?= $chapitre['title'];?>" /><br/>
         <div>
             <textarea id="textarea" class="content" name="content"><?= $chapitre['content'] ?></textarea>
         </div>

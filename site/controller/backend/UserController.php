@@ -139,12 +139,12 @@ require_once(MODEL.'CommentManager.php');
         }
     }
     
-    function modifyChapitre($id, $chapitre)
+    function modifyChapitre($title, $content, $id)
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
       
-        $affectedChapitre = $chapitreManager->editChapitre($id, $chapitre);
-        
+        $affectedChapitre = $chapitreManager->editChapitre($title, $content, $id);
+
         header('Location:index.php?action=showPost&id=' . $id);
         exit; 
         

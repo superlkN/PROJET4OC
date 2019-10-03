@@ -58,10 +58,11 @@
             ?>
                 <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
                 <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-                <a class="button2" href="index.php?action=report&amp;id=<?= $comment['id'] ?>"> Signaler </a>
+                <a class="button2" id="signaler" href="index.php?action=report&amp;id=<?= $comment['id'] ?>"> Signaler </a>
             <?php
             }
             ?>
+            
         </div>
     </div>
 </div>

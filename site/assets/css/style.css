@@ -22,7 +22,8 @@ li {
 
 .news {
     padding: 2%;
-    border: 1px solid #222;
+    background-color: #eee;
+    border: 0px solid;
     border-radius: 19px 19px 19px 19px;
     -moz-border-radius: 19px 19px 19px 19px;
     -webkit-border-radius: 19px 19px 19px 19px;

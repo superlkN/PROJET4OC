@@ -43,11 +43,11 @@ class ChapitreManager extends Manager
         return $req;
     }
 
-    public function editChapitre($id, $chapitre) 
+    public function editChapitre($title, $content, $id) 
     {
         $db = $this->dbConnect();
-        $chapitres = $db->prepare('UPDATE chapitres SET content = ?, creation_date = NOW() WHERE id = ?');
-        $affectedChapitre = $chapitres->execute(array($chapitre, $id));
+        $chapitres = $db->prepare('UPDATE chapitres SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');
+        $affectedChapitre = $chapitres->execute(array($title, $content, $id));
 
         return $affectedChapitre;
     }
