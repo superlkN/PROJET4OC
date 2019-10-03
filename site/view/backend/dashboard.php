@@ -73,6 +73,7 @@
          <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?> (<?= $comment['report'] ?> signalements)</p>
          <p><?= nl2br(htmlspecialchars($comment['comment'])) ?>  </p>
          <a class="button2" href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>">Supprimer</a>
+         <a class="button2" href="index.php?action=resetComment&amp;id=<?= $comment['id'] ?>">Reset</a>
                   
       <?php 
 

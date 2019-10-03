@@ -190,3 +190,12 @@ require_once(MODEL.'CommentManager.php');
         exit;
     }
 
+    function resetComment($id)
+    {
+        $commentManager = new P4OC\site\Model\CommentManager();
+        $reset = $commentManager->resetComments($id);
+
+        header('Location:index.php?action=showDash');
+        exit;
+    }
+

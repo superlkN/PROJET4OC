@@ -128,6 +128,11 @@ try
         {
             deleteComment($_GET['id']);
         }
+
+        elseif ($_GET['action'] == 'resetComment')
+        {
+            resetComment($_GET['id']);
+        }
     }
     else 
     {

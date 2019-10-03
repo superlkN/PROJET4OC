@@ -61,4 +61,14 @@ class CommentManager extends Manager
 
         return $req;
     }
+
+    public function resetComments($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET report = 0 WHERE id = ?');
+        $req->execute(array($id));
+        $reset = $req->fetch();
+
+        return $reset;
+    }
 }
