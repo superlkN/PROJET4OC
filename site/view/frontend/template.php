@@ -8,8 +8,6 @@
         <meta name="viewport" content="width=768" />
         <meta name="viewport" content="width=479" />
         <meta name="viewport" content="width=1024" />
-        <meta name="viewport" content="width=667" />
-        <meta name="viewport" content="width=812" />
     </head>
         
     <body>

@@ -18,6 +18,11 @@ li {
     border-radius: 19px 19px 19px 19px;
     -moz-border-radius: 19px 19px 19px 19px;
     -webkit-border-radius: 19px 19px 19px 19px;
+    display: flex;
+}
+
+.auteur_img {
+  margin-right: 15px;
 }
 
 .news {
@@ -179,6 +184,10 @@ li a:hover {
     width: 400px;
     height: 300px;
   }
+
+  .auteur {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -186,11 +195,19 @@ li a:hover {
     width: 650px;
     height: 550px;
   }
+
+  .auteur {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .chapImg {
     width: 600px;
     height: 450px;
+  }
+
+  .auteur {
+    flex-direction: column;
   }
 }

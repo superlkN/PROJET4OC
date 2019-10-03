@@ -11,7 +11,7 @@
     </ul>
 </div>
 <div class="container">
-    <br>   
+    <br>
     <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
         <label for="title">Titre : </label>
         <input type="text" name="title" id="title" value="<?= $chapitre['title'];?>" /><br/>

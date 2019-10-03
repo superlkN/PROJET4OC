@@ -25,18 +25,20 @@
 while ($data = $auteur->fetch())
 {
 ?>
-    <br>
-    <div class="container auteur">
-        <h3>
-            <?= $data['nom_auteur'] ?>
-        </h3>
+    <div class="auteur">
+        <div class="auteur_img">
+            <h3>
+                <?= $data['nom_auteur'] ?>
+            </h3>
 
-        <?php echo '<img width="400" height="200"src="assets/img/'.$data['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
-        
-        <p>
-            <br>
-            <?= $data['content'] ?>
-        </p>
+            <?php echo '<img width="400" height="200"src="assets/img/'.$data['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
+        </div>
+        <div class="auteur_content">
+            <p>
+                <br>
+                <?= $data['content'] ?>
+            </p>
+        </div>
     </div>
     <br>
 <?php
@@ -53,8 +55,6 @@ while ($data2 = $chapitre->fetch())
                 <?= htmlspecialchars($data2['title']) ?>
                 <em>le <?= $data2['creation_date_fr'] ?></em>
             </h3>
-        
-        <?php echo '<img width="350" height="200"src="assets/img/'.$data2['nom_de_limage'].'.jpg"  title="" alt="" />'; ?>
 
             <p>
                 <br>
