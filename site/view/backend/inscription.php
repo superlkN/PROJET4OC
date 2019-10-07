@@ -13,9 +13,7 @@
 </div>
 
 <div class="inscription "align="center">
-   <br>
    <h2 class="titreInscription">Inscription</h2>
-   <br>
    <div class="formInscription">
       <form  method="POST" action="index.php?action=inscription">
          <table>
@@ -68,8 +66,6 @@
             </tr>
          </table>
       </form>
-      <br>
-      <br>
    </div>
    <?php
    if(isset($erreur)) {

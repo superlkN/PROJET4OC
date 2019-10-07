@@ -11,15 +11,13 @@
     </ul>
 </div>
 <div class="container">
-    <br>
     <form action="index.php?action=modifyChapitre&amp;id=<?= $chapitre['id'] ?>" method="post">
         <label for="title">Titre : </label>
-        <input type="text" name="title" id="title" value="<?= $chapitre['title'];?>" /><br/>
-        <div>
+        <input class="titleEdit" type="text" name="title" id="title" value="<?= $chapitre['title'];?>" /><br/>
+        <div class="contentEdit">
             <textarea id="textarea" class="content" name="content"><?= $chapitre['content'] ?></textarea>
         </div>
         <div>
-            <br>
             <input class="button1" type="submit" value="Modifier" />
         </div>
     </form>

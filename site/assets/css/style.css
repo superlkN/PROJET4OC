@@ -32,6 +32,7 @@ li {
     border-radius: 19px 19px 19px 19px;
     -moz-border-radius: 19px 19px 19px 19px;
     -webkit-border-radius: 19px 19px 19px 19px;
+    margin-top: 40px;
 }
 
 ul {
@@ -62,6 +63,7 @@ li a:hover {
     justify-content: space-between;
     color: snow;
     height: 100px;
+    margin-bottom: 40px;
 }
 
 .button1 {
@@ -131,6 +133,7 @@ li a:hover {
     border-radius: 19px 19px 19px 19px;
     -moz-border-radius: 19px 19px 19px 19px;
     -webkit-border-radius: 19px 19px 19px 19px;
+    margin-top: 40px;
 }
 
 .commentsChap {
@@ -140,6 +143,7 @@ li a:hover {
   border-radius: 19px 19px 19px 19px;
   -moz-border-radius: 19px 19px 19px 19px;
   -webkit-border-radius: 19px 19px 19px 19px;
+  margin-top: 40px;
 }
 
 .inputComments {
@@ -156,10 +160,13 @@ li a:hover {
   border-radius: 19px 19px 19px 19px;
   -moz-border-radius: 19px 19px 19px 19px;
   -webkit-border-radius: 19px 19px 19px 19px;
+  margin-top: -40px;
+  height: 300px;
 }
 
 .titreLogin {
   font-size: 50px;
+  margin-bottom: -20px;
 }
 
 .inscription {
@@ -168,6 +175,8 @@ li a:hover {
   border-radius: 19px 19px 19px 19px;
   -moz-border-radius: 19px 19px 19px 19px;
   -webkit-border-radius: 19px 19px 19px 19px;
+  margin-top: -40px;
+  height: 400px;
 }
 
 .formInscription {
@@ -177,6 +186,34 @@ li a:hover {
 
 .titreInscription {
   font-size: 50px;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.titleCommentsDash {
+  margin-bottom: 20px;
+}
+
+.titleEdit {
+  margin-bottom: 30px;
+}
+
+.contentEdit {
+  margin-bottom: 30px;
+}
+
+.titleNewChap {
+  margin-bottom: 30px;
+}
+
+#submitNew {
+  margin-top: 30px;
+}
+
+#buttonRetour {
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 479px) {

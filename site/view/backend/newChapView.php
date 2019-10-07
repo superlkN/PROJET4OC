@@ -19,16 +19,13 @@
 			<li> <a href="index.php"> Blog </a> </li>
 		</ul>
 	</div>
-	<br>
 	<div class="container">
 		<div>
 			<form action="index.php?action=createChapitre" method="post">
 				<label for="title">Titre : </label>
-				<input type="text" name="title" id="title" placeholder="Votre titre" size="80" /><br/>
-				<br>
+				<input class="titleNewChap" type="text" name="title" id="title" placeholder="Votre titre" size="80" /><br/>
 				<textarea id="textarea2" name="content" rows="" cols=""></textarea>
-				<br>
-				<input class="button1" type="submit" value="Poster" />
+				<input class="button1" id="submitNew" type="submit" value="Poster" />
 			</form>
 		</div>
 	</div>

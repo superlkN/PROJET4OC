@@ -13,7 +13,6 @@
       </div>
       
       <div class="login" align="center">
-         <br>
          <h2 class="titreLogin">Connexion</h2>
          <br /><br />
          <form method="POST" action="index.php?action=login">
@@ -22,8 +21,6 @@
             <br /><br />
             <input class="button1" type="submit" name="formconnexion" value="Se connecter !" />
          </form>
-         <br>
-         <br>
       </div>
    
 

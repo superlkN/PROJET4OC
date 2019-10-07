@@ -26,7 +26,6 @@
 </div>
 
 
-<br>
 <div class="container content-dash">
    <a class="button1" href="index.php?action=viewCreateChap">Ecrire un nouveau chapitre</a>
    <br> 
@@ -51,7 +50,6 @@
       <a class="button1" href="index.php?action=deleteChapitre&amp;id=<?= $chapitre['id'] ?>">Supprimer</a>
 
    </div>
-   <br>
 
    <?php
 
@@ -60,8 +58,8 @@
    ?>
 
    <div class="commentsDash">
-      <h2> Commentaires signalés :</h2>
-      <br>
+      <h2 class="titleCommentsDash"> Commentaires signalés :</h2>
+
       <?php
 
       while ($comment = $comments->fetch())

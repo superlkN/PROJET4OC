@@ -17,8 +17,7 @@
     </div>
 
     <div class="container">
-        <br>
-        <p><a class="button1" href="index.php">Retour à la liste des billets</a></p>
+        <p><a class="button1" id="buttonRetour" href="index.php">Retour à la liste des billets</a></p>
         <div class="news">
             <h3>
                 <?= htmlspecialchars($chapitre['title']) ?>
@@ -26,12 +25,9 @@
             </h3>
             
             <p>
-                <br>
                 <?= $chapitre['content'] ?>
             </p>
         </div>
-        
-        <br>
         
         <div class="commentsChap">
             <h2>Commentaires</h2>
@@ -48,15 +44,16 @@
                     <input class="button1" type="submit" />
                 </div>
             </form>
-            <br>
             
             <?php
             while ($comment = $comments->fetch())
             {
             ?>
-                <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-                <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-                <a class="button2" id="signaler" href="index.php?action=report&amp;id=<?= $comment['id'] ?>"> Signaler </a>
+                <div class="comments">
+                    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+                    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+                    <a class="button2" id="signaler" href="index.php?action=report&amp;id=<?= $comment['id'] ?>"> Signaler </a>
+                </div>
             <?php
             }
             ?>

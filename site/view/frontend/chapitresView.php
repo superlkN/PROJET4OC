@@ -35,12 +35,10 @@ while ($data = $auteur->fetch())
         </div>
         <div class="auteur_content">
             <p>
-                <br>
                 <?= $data['content'] ?>
             </p>
         </div>
     </div>
-    <br>
 <?php
 }
 ?>
@@ -57,7 +55,6 @@ while ($data2 = $chapitre->fetch())
             </h3>
 
             <p>
-                <br>
                 <?php 
                     $length = nl2br(substr($data2['content'], 0, 352)); 
                     echo $length;
@@ -65,7 +62,6 @@ while ($data2 = $chapitre->fetch())
                 <em><a class="button3" href="index.php?action=showPost&amp;id=<?= $data2['id'] ?>">[...]</a></em>
             </p>
         </div>
-        <br>
     </div>
 <?php
 }
