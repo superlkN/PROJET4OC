@@ -4,13 +4,24 @@ require_once(MODEL.'AuthManager.php');
 require_once(MODEL.'ChapitreManager.php');
 require_once(MODEL.'CommentManager.php');
 
+class UserController 
+{
+    /**
+     *  Affiche la vue login
+     * 
+     */
 
-    function showLogin()
+    public function showLogin()
     {
         require(VIEWBACK.'login.php');
     }
 
-    function showDash()
+    /**
+     *  Affiche la vue dashboard
+     * 
+     */
+
+    public function showDash()
     {
 
         if ($_SESSION['isadmin'] == 1)
@@ -29,12 +40,22 @@ require_once(MODEL.'CommentManager.php');
         }
     }
 
-    function showInscription()
+    /**
+     *  Affiche la vue inscription
+     * 
+     */
+
+    public function showInscription()
     {
         require(VIEWBACK.'inscription.php');
     }
 
-    function logout() 
+    /**
+     *  Déconnexion de l'utilisateur
+     * 
+     */
+
+    public function logout() 
     {
         $_SESSION = array();
         session_destroy();
@@ -42,7 +63,12 @@ require_once(MODEL.'CommentManager.php');
         exit;
     }
 
-    function checkLogin($mailconnect)
+    /**
+     *  Connexion de l'utilisateur 
+     * 
+     */
+
+    public function checkLogin($mailconnect)
     {
 
         $authManager = new P4OC\site\Model\AuthManager();
@@ -82,7 +108,12 @@ require_once(MODEL.'CommentManager.php');
           
     }
 
-    function inscription($pseudo, $mail, $mdp_hash) 
+    /**
+     *  Inscription de l'utilisateur
+     * 
+     */
+
+    public function inscription($pseudo, $mail, $mdp_hash) 
     {
         $authManager = new P4OC\site\Model\AuthManager();
         $pseudo = htmlspecialchars($_POST['pseudo']);
@@ -129,7 +160,12 @@ require_once(MODEL.'CommentManager.php');
         
     }
     
-    function dashboard($getid) 
+    /**
+     *  S'il y a un id en GET, lance la méthode dashboardManager()
+     * 
+     */
+
+    public function dashboard($getid) 
     {
         $authManager = new P4OC\site\Model\AuthManager();
         
@@ -139,7 +175,12 @@ require_once(MODEL.'CommentManager.php');
         }
     }
     
-    function modifyChapitre($title, $content, $id)
+    /**
+     *  Modifie le chapitre
+     * 
+     */
+
+    public function modifyChapitre($title, $content, $id)
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
       
@@ -150,7 +191,12 @@ require_once(MODEL.'CommentManager.php');
         
     }
 
-    function viewChapitre($postId)
+    /**
+     *  Affiche le vue d'edition d'un chapitre
+     * 
+     */
+
+    public function viewChapitre($postId)
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitre = $chapitreManager->getChapitre($_GET['id']);
@@ -158,7 +204,12 @@ require_once(MODEL.'CommentManager.php');
         require(VIEWBACK.'editChapView.php');
     }
 
-    function createChapitre($title, $content)
+    /**
+     *  Création d'un nouveau chapitre
+     * 
+     */
+
+    public function createChapitre($title, $content)
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $createChapitre = $chapitreManager->addChapitre($title, $content);
@@ -167,12 +218,22 @@ require_once(MODEL.'CommentManager.php');
         exit;
     }
 
-    function viewCreateChap()
+    /**
+     *  Affiche la vue de création d'un chapitre
+     * 
+     */
+
+    public function viewCreateChap()
     {
         require(VIEWBACK.'newChapView.php');
     }   
 
-    function deleteComment($id)
+    /**
+     *  Supprime un commentaire
+     * 
+     */
+
+    public function deleteComment($id)
     {
         $commentManager = new P4OC\site\Model\CommentManager();
         $delete = $commentManager->deleteComments($id);
@@ -181,7 +242,12 @@ require_once(MODEL.'CommentManager.php');
         exit;
     }
 
-    function deleteChap($id)
+    /**
+     *  Supprime un chapitre
+     * 
+     */
+
+    public function deleteChap($id)
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitre = $chapitreManager->deleteChapitre($id);
@@ -190,7 +256,12 @@ require_once(MODEL.'CommentManager.php');
         exit;
     }
 
-    function resetComment($id)
+    /**
+     *  Reset le commentaire signalé
+     * 
+     */
+
+    public function resetComment($id)
     {
         $commentManager = new P4OC\site\Model\CommentManager();
         $reset = $commentManager->resetComments($id);
@@ -198,4 +269,5 @@ require_once(MODEL.'CommentManager.php');
         header('Location:index.php?action=showDash');
         exit;
     }
+}
 

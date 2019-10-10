@@ -6,6 +6,14 @@ require_once(MODEL."Manager.php");
 
 class ChapitreManager extends Manager
 {
+
+    /**
+     *  Récupère tout les chapitres en bdd
+     * 
+     * @return $req
+     * 
+     */
+
     public function getChapitres() 
     {
         $db = $this->dbConnect();
@@ -14,6 +22,14 @@ class ChapitreManager extends Manager
 
         return $req;
     }
+
+    /**
+     *  Récupère un seul chapitre en bdd
+     * 
+     * @param array $postId
+     * @return $post
+     * 
+     */
 
     public function getChapitre($postId)
     {
@@ -25,6 +41,13 @@ class ChapitreManager extends Manager
         return $post;
     }
 
+    /**
+     *  Récupère l'auteur dans la table auteur
+     * 
+     * @return $req
+     * 
+     */
+
     public function getAuteur()
     {
         $db = $this->dbConnect();
@@ -33,6 +56,14 @@ class ChapitreManager extends Manager
         
         return $req;
     }
+
+    /**
+     *  Ajoute un chapitre dans la bdd
+     * 
+     * @param array $title $content
+     * @return $req
+     * 
+     */
 
     public function addChapitre($title, $content)
     {
@@ -43,6 +74,14 @@ class ChapitreManager extends Manager
         return $req;
     }
 
+    /**
+     *  Met à jour un chapitre dans la bdd
+     * 
+     * @param array $title $content $id
+     * @return $affectedChapitre
+     * 
+     */
+
     public function editChapitre($title, $content, $id) 
     {
         $db = $this->dbConnect();
@@ -51,6 +90,14 @@ class ChapitreManager extends Manager
 
         return $affectedChapitre;
     }
+
+    /**
+     *  Supprime un chapitre dans la bdd
+     * 
+     * @param array $id
+     * @return $delete
+     * 
+     */
 
     public function deleteChapitre($id)
     {

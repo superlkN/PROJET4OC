@@ -4,8 +4,14 @@ require_once(MODEL.'ChapitreManager.php');
 require_once(MODEL.'CommentManager.php');
 
 
+class Home 
+{
+    /**
+     *  Affiche la page d'accueuil du blog
+     * 
+     */
 
-    function showHome()
+    public function showHome()
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $chapitre = $chapitreManager->getChapitres();
@@ -13,7 +19,13 @@ require_once(MODEL.'CommentManager.php');
   
         require(VIEWFRONT.'chapitresView.php');
     }
-    function showPost()
+
+    /**
+     *  Affiche un seul chapitre
+     * 
+     */
+
+    public function showPost()
     {
         $chapitreManager = new P4OC\site\Model\ChapitreManager();
         $commentManager = new P4OC\site\Model\CommentManager();
@@ -24,7 +36,12 @@ require_once(MODEL.'CommentManager.php');
         require(VIEWFRONT.'chapView.php');
     }
 
-    function addComment($postId, $author, $comment)
+    /**
+     *  Ajoute un commentaire
+     * 
+     */
+
+    public function addComment($postId, $author, $comment)
     {
         $commentManager = new P4OC\site\Model\CommentManager();
     
@@ -39,7 +56,12 @@ require_once(MODEL.'CommentManager.php');
         }
     } 
 
-    function report($id)
+    /**
+     *  Report un commentaire
+     * 
+     */
+
+    public function report($id)
     {
         $commentManager = new P4OC\site\Model\CommentManager();
         $comment = $commentManager->reportComment($id);
@@ -48,7 +70,7 @@ require_once(MODEL.'CommentManager.php');
         exit;
 
     }
-
+}
      
 
   

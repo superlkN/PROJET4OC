@@ -6,6 +6,14 @@ require_once(MODEL."Manager.php");
 
 class AuthManager extends Manager 
 {
+    /**
+     *  Insère un pseudo, mail et un mot de passe dans la base de donnée
+     * 
+     * @param array $pseudo $mail $mdp_hash
+     * @return $insertmbr
+     * 
+     */
+
     public function getUser($pseudo, $mail, $mdp_hash) {
         
         $db = $this->dbConnect();
@@ -15,6 +23,14 @@ class AuthManager extends Manager
 
         return $insertmbr;
     }
+    
+    /**
+     *  Vérification du mail de l'utilisateur présent en BDD
+     * 
+     * @param array $mail
+     * @return $mailinfo
+     * 
+     */
 
     public function getMail($mail)
     {
@@ -26,6 +42,14 @@ class AuthManager extends Manager
         return $mailinfo;
     }
 
+    /**
+     *  Vérification du mail de l'utilisateur présent en BDD
+     * 
+     * @param array $mailconnect
+     * @return $userinfo
+     * 
+     */
+
     public function checkLoginManager($mailconnect)
     {
         $db = $this->dbConnect();
@@ -35,6 +59,14 @@ class AuthManager extends Manager
 
         return $userinfo;
     }
+
+    /**
+     *  Récupère l'id de l'utilisateur en BDD
+     * 
+     * @param array $getid
+     * @return $userinfo
+     * 
+     */
 
     public function dashboardManager($getid)
     {

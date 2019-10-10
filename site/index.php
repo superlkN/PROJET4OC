@@ -14,69 +14,73 @@ try
     }
     else
     {
-        showHome();
+    $home = new Home;
+    $home->showHome();
     }
 
     if(isset($action))
     {
+        $home = new Home;
+        $user = new UserController;
+
         switch ($action)
         {
             case "showHome":
-                showHome();
+                $home->showHome();
                 break;
             case "showPost":
-                showPost();
+                $home->showPost();
                 break;
             case "addComment":
-                addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                $home->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                 break;
             case "showLogin":
-                showLogin();
+                $user->showLogin();
                 break;
             case "showDash":
-                showDash();
+                $user->showDash();
                 break;
             case "showInscription":
-                showInscription();
+                $user->showInscription();
                 break;
             case "logout":
-                logout();
+                $user->logout();
                 break;
             case "inscription":
-                inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
+                $user->inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
                 break;
             case "login":
-                checklogin($_POST['mailconnect']);
+                $user->checklogin($_POST['mailconnect']);
                 break;
             case "dashboard":
-                dashboard($_GET['id']);
+                $user->dashboard($_GET['id']);
                 break;
             case "modifyChapitre":
-                modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']); 
+                $user->modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']); 
                 break;
             case "viewChapitre":
-                viewChapitre($_GET['id']);
+                $user->viewChapitre($_GET['id']);
                 break;
             case "report":
-                report($_GET['id']);
+                $home->report($_GET['id']);
                 break;
             case "deleteChapitre":
-                deleteChap($_GET['id']);
+                $user->deleteChap($_GET['id']);
                 break;
             case "createChapitre":
-                createChapitre($_POST['title'], $_POST['content']);
+                $user->createChapitre($_POST['title'], $_POST['content']);
                 break;
             case "viewCreateChap":
-                viewCreateChap();
+                $user->viewCreateChap();
                 break;
             case "deleteComment":
-                deleteComment($_GET['id']);
+                $user->deleteComment($_GET['id']);
                 break;
             case "resetComment":
-                resetComment($_GET['id']);
+                $user->resetComment($_GET['id']);
                 break;
             default:
-                showHome();
+                $home->showHome();
         }
     }    
 }

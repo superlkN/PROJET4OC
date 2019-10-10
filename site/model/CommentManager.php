@@ -5,6 +5,15 @@ require_once("Manager.php");
   
 class CommentManager extends Manager
 {
+
+    /**
+     *  Récupère les commentaires présent dans la table comments
+     * 
+     * @param array $postId
+     * @return $comments
+     * 
+     */
+
     public function getComments($postId)
     {
         $db = $this->dbConnect();
@@ -14,6 +23,14 @@ class CommentManager extends Manager
         return $comments;
     }
   
+    /**
+     *  Ajoute un commentaire dans la bdd
+     * 
+     * @param array $postId $author $comment
+     * @return $affctedLines
+     * 
+     */
+
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
@@ -23,6 +40,14 @@ class CommentManager extends Manager
         return $affectedLines;
     }
      
+    /**
+     *  Récupère un seul commentaire de la table comments
+     * 
+     * @param array $id
+     * @return $comment
+     * 
+     */
+
    public function getComment($id)
     {
         $db = $this->dbConnect();
@@ -32,6 +57,14 @@ class CommentManager extends Manager
         
         return $comment;
     }
+
+    /**
+     *  Incrémente de 1 dans la bdd sur le champ report de la table comments
+     * 
+     * @param array $id
+     * @return $reported
+     * 
+     */
 
     public function reportComment($id)
     {
@@ -43,6 +76,13 @@ class CommentManager extends Manager
         return $reported;
     }
 
+    /**
+     *  Récupère tout les commentaires qui ont été report
+     * 
+     * @return $req
+     * 
+     */
+
     public function getReportedComments()
     {
         $db = $this->dbConnect();
@@ -53,6 +93,14 @@ class CommentManager extends Manager
         return $req;
     }
 
+    /**
+     *  Supprime un commentaire 
+     * 
+     * @param array $id
+     * @return $req
+     * 
+     */
+
     public function deleteComments($id)
     {
         $db = $this->dbConnect();
@@ -61,6 +109,14 @@ class CommentManager extends Manager
 
         return $req;
     }
+
+    /**
+     *  Remet à 0 le champ report 
+     * 
+     * @param array $id
+     * @return $reset
+     * 
+     */
 
     public function resetComments($id)
     {
