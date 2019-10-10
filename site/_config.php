@@ -19,3 +19,10 @@ define('MODEL', ROOT.'model/');
 define('CLASSES', ROOT.'classes/');
 
 define('ASSETS', HOST.'assets/css/');
+
+define("DBDRIVER", "mysql");
+define("DBHOST", "localhost");
+define("DBNAME", "projet4_oc");
+define("DBCHARSET", "utf8");
+define("DBUSER", "root");
+define("DBPASSWD", "");

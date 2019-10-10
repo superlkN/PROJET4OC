@@ -8,137 +8,78 @@ require_once(CONTROLLERBACK.'UserController.php');
 
 try 
 {
-    if (isset($_GET['action']))
+    if(isset($_GET['action']))
     {
-        if ($_GET['action'] == 'showHome') 
-        {
-            showHome();
-        }
-        elseif ($_GET['action'] == 'showPost') 
-        {
-            if (isset($_GET['id']) && $_GET['id'] > 0) 
-            {
-                showPost();
-            }
-            else 
-            {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
-        elseif ($_GET['action'] == 'addComment') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-                }
-                else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
-                }
-            }
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
-        elseif ($_GET['action'] == 'showLogin')
-        {
-            showLogin();
-        }
-        elseif ($_GET['action'] == 'showDash')
-        {
-            showDash();
-        }
-        elseif ($_GET['action'] == 'showInscription')
-        {
-            showInscription();
-        }
-        elseif ($_GET['action'] == 'showDash')
-        {
-            showDash();
-        }
-        elseif ($_GET['action'] == 'logout')
-        {
-            logout();
-        }
-        elseif ($_GET['action'] == 'inscription' && isset($_POST['forminscription'])) 
-        {
-            
-            inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
-            
-        }
-        elseif ($_GET['action'] == 'login' && isset($_POST['formconnexion']))
-        {
-            checklogin($_POST['mailconnect']); 
-        }
-        
-        elseif ($_GET['action'] == 'dashboard')
-        {
-            dashboard($_GET['id']);
-        } 
-
-        elseif ($_GET['action'] == 'modifyChapitre')
-        {
-                if(!empty($_GET['id']) && $_GET['id'] > 0)
-                {
-                    if(!empty($_POST['content']))
-                    {
-                        modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']);  
-                    }
-                    else
-                    {
-                        throw new Exception('Tous les champs ne sont pas remplis !');
-                    }
-                }  
-                else
-                {
-                    throw new Exception('Aucun identifiant de billet envoyé');
-                }
-        } 
-
-        elseif ($_GET['action'] == 'viewChapitre' && isset($_GET['id']) && $_GET['id'] > 0)
-        {
-            viewChapitre($_GET['id']); 
-        }
-
-        elseif ($_GET['action'] == 'report') 
-        {
-            report($_GET['id']);
-        }
-
-        elseif ($_GET['action'] == 'deleteChapitre')
-        {
-            deleteChap($_GET['id']);
-        }
-
-        elseif ($_GET['action'] == 'createChapitre')
-        {
-            if (!empty($_POST['title']) && !empty($_POST['content'])) {
-				createChapitre($_POST['title'], $_POST['content']);
-            }
-            else 
-            {
-                echo "contenu vide";
-            }
-        }
-
-        elseif ($_GET['action'] == 'viewCreateChap')
-        {
-            viewCreateChap();
-        }
-
-        elseif ($_GET['action'] == 'deleteComment')
-        {
-            deleteComment($_GET['id']);
-        }
-
-        elseif ($_GET['action'] == 'resetComment')
-        {
-            resetComment($_GET['id']);
-        }
+        $action = $_GET['action'];
     }
-    else 
+    else
     {
         showHome();
-    } 
-} 
+    }
+
+    if(isset($action))
+    {
+        switch ($action)
+        {
+            case "showHome":
+                showHome();
+                break;
+            case "showPost":
+                showPost();
+                break;
+            case "addComment":
+                addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                break;
+            case "showLogin":
+                showLogin();
+                break;
+            case "showDash":
+                showDash();
+                break;
+            case "showInscription":
+                showInscription();
+                break;
+            case "logout":
+                logout();
+                break;
+            case "inscription":
+                inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
+                break;
+            case "login":
+                checklogin($_POST['mailconnect']);
+                break;
+            case "dashboard":
+                dashboard($_GET['id']);
+                break;
+            case "modifyChapitre":
+                modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']); 
+                break;
+            case "viewChapitre":
+                viewChapitre($_GET['id']);
+                break;
+            case "report":
+                report($_GET['id']);
+                break;
+            case "deleteChapitre":
+                deleteChap($_GET['id']);
+                break;
+            case "createChapitre":
+                createChapitre($_POST['title'], $_POST['content']);
+                break;
+            case "viewCreateChap":
+                viewCreateChap();
+                break;
+            case "deleteComment":
+                deleteComment($_GET['id']);
+                break;
+            case "resetComment":
+                resetComment($_GET['id']);
+                break;
+            default:
+                showHome();
+        }
+    }    
+}
 catch(Exception $e) 
 {
     echo 'Erreur : ' . $e->getMessage();
