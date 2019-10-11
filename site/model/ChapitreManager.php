@@ -26,7 +26,7 @@ class ChapitreManager extends Manager
     /**
      *  Récupère un seul chapitre en bdd
      * 
-     * @param int $postId
+     * @param int $postId Id du chapitre
      * @return $post
      * 
      */
@@ -60,8 +60,8 @@ class ChapitreManager extends Manager
     /**
      *  Ajoute un chapitre dans la bdd
      * 
-     * @param String $title
-     * @param String $content
+     * @param String $title titre du chapitre
+     * @param String $content contenu du chapitre
      * 
      * @return $req
      * 
@@ -79,9 +79,9 @@ class ChapitreManager extends Manager
     /**
      *  Met à jour un chapitre dans la bdd
      * 
-     * @param String $title
-     * @param String $content
-     * @param int $id
+     * @param String $title titre du chapitre
+     * @param String $content contenu du chapitre
+     * @param int $id identifiant de l'entité
      * 
      * @return $affectedChapitre
      * 
@@ -99,7 +99,7 @@ class ChapitreManager extends Manager
     /**
      *  Supprime un chapitre dans la bdd
      * 
-     * @param int $id
+     * @param int $id identifiant de l'entité
      * 
      * @return $delete
      * 

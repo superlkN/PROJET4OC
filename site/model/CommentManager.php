@@ -9,7 +9,7 @@ class CommentManager extends Manager
     /**
      *  Récupère les commentaires présent dans la table comments
      * 
-     * @param int $postId
+     * @param int $postId Id du chapitre
      * 
      * @return $comments
      * 
@@ -27,9 +27,9 @@ class CommentManager extends Manager
     /**
      *  Ajoute un commentaire dans la bdd
      * 
-     * @param int $postId
-     * @param String $author
-     * @param String $comment
+     * @param int $postId Id du chapitre
+     * @param String $author auteur du commentaire
+     * @param String $comment contenu du commentaire
      * 
      * @return $affctedLines
      * 
@@ -47,9 +47,9 @@ class CommentManager extends Manager
     /**
      *  Récupère un seul commentaire de la table comments
      * 
-     * @param int $id
+     * @param int $id identifiant de l'entité
      * 
-     * @return $comment
+     * @return $comment 
      * 
      */
 
@@ -66,7 +66,7 @@ class CommentManager extends Manager
     /**
      *  Incrémente de 1 dans la bdd sur le champ report de la table comments
      * 
-     * @param int $id
+     * @param int $id identifiant de l'entité
      * 
      * @return $reported
      * 
@@ -102,7 +102,7 @@ class CommentManager extends Manager
     /**
      *  Supprime un commentaire 
      * 
-     * @param array $id
+     * @param array $id identifiant de l'entité
      * @return $req
      * 
      */
@@ -119,7 +119,7 @@ class CommentManager extends Manager
     /**
      *  Remet à 0 le champ report 
      * 
-     * @param array $id
+     * @param array $id identifiant de l'entité
      * @return $reset
      * 
      */
