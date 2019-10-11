@@ -9,8 +9,11 @@ class AuthManager extends Manager
     /**
      *  Insère un pseudo, mail et un mot de passe dans la base de donnée
      * 
-     * @param array $pseudo $mail $mdp_hash
-     * @return $insertmbr
+     * @param String $pseudo Pseudo du nouvel utilisateur
+     * @param String $mail Mail du nouvel utilisateur
+     * @param String $mdp_hash Mot de passe du nouvel utilisateur
+     *  
+     * @return $memberinfo
      * 
      */
 
@@ -21,13 +24,14 @@ class AuthManager extends Manager
         $insertmbr->execute(array($pseudo, $mail, $mdp_hash));
         $memberinfo = $insertmbr->fetch();
 
-        return $insertmbr;
+        return $memberinfo;
     }
     
     /**
      *  Vérification du mail de l'utilisateur présent en BDD
      * 
-     * @param array $mail
+     * @param String $mail Mail de l'utilisateur
+     * 
      * @return $mailinfo
      * 
      */
@@ -45,7 +49,8 @@ class AuthManager extends Manager
     /**
      *  Vérification du mail de l'utilisateur présent en BDD
      * 
-     * @param array $mailconnect
+     * @param String $mailconnect Mail de l'utilisateur
+     * 
      * @return $userinfo
      * 
      */
@@ -63,7 +68,8 @@ class AuthManager extends Manager
     /**
      *  Récupère l'id de l'utilisateur en BDD
      * 
-     * @param array $getid
+     * @param int $getid Id de l'utilisateur
+     *  
      * @return $userinfo
      * 
      */

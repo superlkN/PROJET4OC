@@ -32,7 +32,17 @@ try
                 $home->showPost();
                 break;
             case "addComment":
-                $home->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                        $home->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                    }
+                    else {
+                        throw new Exception('Tous les champs ne sont pas remplis !');
+                    }
+                }
+                else {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
                 break;
             case "showLogin":
                 $user->showLogin();
@@ -47,19 +57,39 @@ try
                 $user->logout();
                 break;
             case "inscription":
-                $user->inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
+                if (isset($_POST['forminscription'])) {
+                    $user->inscription($_POST['pseudo'], $_POST['mail'], $_POST['mdp']);
+                }
                 break;
             case "login":
-                $user->checklogin($_POST['mailconnect']);
+                if (isset($_POST['formconnexion'])) {
+                    $user->checklogin($_POST['mailconnect']);
+                }
                 break;
             case "dashboard":
                 $user->dashboard($_GET['id']);
                 break;
             case "modifyChapitre":
-                $user->modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']); 
+                if(!empty($_GET['id']) && $_GET['id'] > 0)
+                {
+                    if(!empty($_POST['content']))
+                    {
+                        $user->modifyChapitre($_POST['title'], $_POST['content'], $_GET['id']); 
+                    }
+                    else
+                    {
+                        throw new Exception('Tous les champs ne sont pas remplis !');
+                    }
+                }  
+                else
+                {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
                 break;
             case "viewChapitre":
-                $user->viewChapitre($_GET['id']);
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $user->viewChapitre($_GET['id']);
+                }
                 break;
             case "report":
                 $home->report($_GET['id']);
@@ -68,7 +98,13 @@ try
                 $user->deleteChap($_GET['id']);
                 break;
             case "createChapitre":
-                $user->createChapitre($_POST['title'], $_POST['content']);
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    $user->createChapitre($_POST['title'], $_POST['content']);
+                }
+                else 
+                {
+                    echo "contenu vide";
+                }
                 break;
             case "viewCreateChap":
                 $user->viewCreateChap();
