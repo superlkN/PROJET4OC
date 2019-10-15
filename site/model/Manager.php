@@ -7,7 +7,7 @@ class Manager
     /**
      *  Connexion à la base de donnée
      * 
-     * @return $db
+     * @return PDO return la connexion à la bdd
      * 
      */
 

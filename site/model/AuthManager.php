@@ -13,7 +13,7 @@ class AuthManager extends Manager
      * @param String $mail Mail du nouvel utilisateur
      * @param String $mdp_hash Mot de passe du nouvel utilisateur
      *  
-     * @return $memberinfo
+     * @return array return les infos de l'utilisateur
      * 
      */
 
@@ -32,7 +32,7 @@ class AuthManager extends Manager
      * 
      * @param String $mail Mail de l'utilisateur
      * 
-     * @return $mailinfo
+     * @return String return le mail de l'utilisateur
      * 
      */
 
@@ -51,7 +51,7 @@ class AuthManager extends Manager
      * 
      * @param String $mailconnect Mail de l'utilisateur
      * 
-     * @return $userinfo
+     * @return String return le mail de l'utilisateur
      * 
      */
 
@@ -70,7 +70,7 @@ class AuthManager extends Manager
      * 
      * @param int $getid Id de l'utilisateur
      *  
-     * @return $userinfo
+     * @return int return l'id de l'utilisateur
      * 
      */
 

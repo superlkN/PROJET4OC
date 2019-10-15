@@ -11,7 +11,7 @@ class CommentManager extends Manager
      * 
      * @param int $postId Id du chapitre
      * 
-     * @return $comments
+     * @return int return l'id 
      * 
      */
 
@@ -31,7 +31,7 @@ class CommentManager extends Manager
      * @param String $author auteur du commentaire
      * @param String $comment contenu du commentaire
      * 
-     * @return $affctedLines
+     * @return array return l'auteur, le contenu et l'id
      * 
      */
 
@@ -49,7 +49,7 @@ class CommentManager extends Manager
      * 
      * @param int $id identifiant de l'entité
      * 
-     * @return $comment 
+     * @return int return l'id  
      * 
      */
 
@@ -68,7 +68,7 @@ class CommentManager extends Manager
      * 
      * @param int $id identifiant de l'entité
      * 
-     * @return $reported
+     * @return int return l'id 
      * 
      */
 
@@ -85,7 +85,7 @@ class CommentManager extends Manager
     /**
      *  Récupère tout les commentaires qui ont été report
      * 
-     * @return $req
+     * @return String return les commentaires 
      * 
      */
 
@@ -102,8 +102,8 @@ class CommentManager extends Manager
     /**
      *  Supprime un commentaire 
      * 
-     * @param array $id identifiant de l'entité
-     * @return $req
+     * @param int $id identifiant de l'entité
+     * @return int return l'id 
      * 
      */
 
@@ -119,8 +119,8 @@ class CommentManager extends Manager
     /**
      *  Remet à 0 le champ report 
      * 
-     * @param array $id identifiant de l'entité
-     * @return $reset
+     * @param int $id identifiant de l'entité
+     * @return int return l'id
      * 
      */
 

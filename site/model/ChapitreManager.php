@@ -10,7 +10,7 @@ class ChapitreManager extends Manager
     /**
      *  Récupère tout les chapitres en bdd
      * 
-     * @return $req
+     * @return String return les chapitres 
      * 
      */
 
@@ -27,7 +27,7 @@ class ChapitreManager extends Manager
      *  Récupère un seul chapitre en bdd
      * 
      * @param int $postId Id du chapitre
-     * @return $post
+     * @return int return l'id du chapitre
      * 
      */
 
@@ -44,7 +44,7 @@ class ChapitreManager extends Manager
     /**
      *  Récupère l'auteur dans la table auteur
      * 
-     * @return $req
+     * @return String return l'auteur 
      * 
      */
 
@@ -63,7 +63,7 @@ class ChapitreManager extends Manager
      * @param String $title titre du chapitre
      * @param String $content contenu du chapitre
      * 
-     * @return $req
+     * @return array return le titre et le contenu 
      * 
      */
 
@@ -83,7 +83,7 @@ class ChapitreManager extends Manager
      * @param String $content contenu du chapitre
      * @param int $id identifiant de l'entité
      * 
-     * @return $affectedChapitre
+     * @return array return le titre, le contenu, et l'id 
      * 
      */
 
@@ -101,7 +101,7 @@ class ChapitreManager extends Manager
      * 
      * @param int $id identifiant de l'entité
      * 
-     * @return $delete
+     * @return int return l'id 
      * 
      */
 
