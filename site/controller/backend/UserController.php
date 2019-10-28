@@ -97,15 +97,13 @@ class UserController
                         $_SESSION['mail'] = $auth['mail'];
                         header("Location: index.php");
                     }
-                } 
-            } else {
-                echo "Mauvais mail ou mot de passe !";
-            }
+                } else {
+                    echo "Mauvais mail ou mot de passe !";
+                }
+            } 
         } else {
             echo "Tous les champs doivent être complétés !";
-        }
-        
-          
+        }      
     }
 
     /**
