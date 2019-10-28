@@ -99,10 +99,18 @@ class UserController
                     }
                 } else {
                     echo "Mauvais mail ou mot de passe !";
+                    header("refresh:2;url=index.php?action=showLogin");
+                    exit;
                 }
-            } 
+            } else {
+                echo "Mauvais mail ou mot de passe!";
+                header("refresh:2;url=index.php?action=showLogin");
+                exit;
+            }
         } else {
             echo "Tous les champs doivent être complétés !";
+            header("refresh:2;url=index.php?action=showLogin");
+            exit;
         }      
     }
 
