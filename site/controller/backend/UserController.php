@@ -98,18 +98,18 @@ class UserController
                         header("Location: index.php");
                     }
                 } else {
-                    echo "Mauvais mail ou mot de passe !";
                     header("refresh:2;url=index.php?action=showLogin");
+                    echo "Mauvais mail ou mot de passe !";
                     exit;
                 }
             } else {
-                echo "Mauvais mail ou mot de passe!";
                 header("refresh:2;url=index.php?action=showLogin");
+                echo "Mauvais mail ou mot de passe!";
                 exit;
             }
         } else {
-            echo "Tous les champs doivent être complétés !";
             header("refresh:2;url=index.php?action=showLogin");
+            echo "Tous les champs doivent être complétés !";
             exit;
         }      
     }
@@ -144,21 +144,27 @@ class UserController
                             exit;
                             
                         } else {
+                            header('refresh:3;url=index.php?action=showInscription');
                             echo "Vos mots de passes ne correspondent pas !";
                         }
                     } else {
+                        header('refresh:3;url=index.php?action=showInscription');
                         echo "Adresse mail déjà utilisée !";
                     }
                     } else {
+                        header('refresh:3;url=index.php?action=showInscription');
                         echo "Votre adresse mail n'est pas valide !";
                     }
                 } else {
+                    header('refresh:3;url=index.php?action=showInscription');
                     echo "Vos adresses mail ne correspondent pas !";
                 }
             } else {
+                header('refresh:3;url=index.php?action=showInscription');
                 echo "Votre pseudo ne doit pas dépasser 255 caractères !";
             }
         } else {
+            header('refresh:3;url=index.php?action=showInscription');
             echo "Tous les champs doivent être complétés !";
         }
         
